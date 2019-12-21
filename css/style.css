@@ -481,20 +481,21 @@ width:60%;
 
 .myQuestions{
 	width: 100%;
-	height: auto;
 	min-height: 40%;
+	height: auto;
+	
 }
 
 .myAnswers{
 	width: 100%;
-	height: auto;
 	min-height: 40%;
+	height: auto;
 }
 
 .containerDown{
 	position: relative;
 	width: 60%;
-	min-height: 170px;
+	min-height: 250px;
 	height: auto;
 	background: #fff;
 	box-shadow: 0 8px 8px rgba(0,0,0,.5);
@@ -514,9 +515,10 @@ width:60%;
 
 }
 .containerDown .details{
+	position: relative;
 	float: right;
-	padding-bottom: 5px;
-	padding-right: 20px;
+	margin-bottom: 5px;
+	margin-right: 20px;
 }
 
 .containerDown button{
@@ -904,6 +906,7 @@ width:60%;
 
 .containerQ .details div{
 	display: flex;
+	min-width: 20%; 
 }
 
 
@@ -1022,6 +1025,7 @@ width:60%;
 .containerOQ{
 	position: relative;
 	width: 60%;
+	height: auto;
 	min-height: 300px;
 	background: #fff;
 	box-shadow: 0 8px 8px rgba(0,0,0,.5);
@@ -1067,7 +1071,7 @@ width:60%;
 }
 
 .insideContainerOQ .likeDislikeOQ{
-	width: 100%
+	width: 100%;
 	text-align: left;
 }
 
