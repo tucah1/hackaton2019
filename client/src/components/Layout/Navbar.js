@@ -1,7 +1,9 @@
 import React, { Fragment } from 'react';
 import { Link } from 'react-router-dom';
+import { logout } from '../../actions/auth';
+import { connect } from 'react-redux';
 
-const Navbar = props => {
+const Navbar = ({ logout, history }) => {
     return (
         <Fragment>
             <div class="navigation">
@@ -16,13 +18,29 @@ const Navbar = props => {
                         </Link>
                     </li>
                     <li>
-                        <Link id="questions" href="#">
+                        <Link id="questions" to="/questions">
                             <span data-hover="">Question</span>
                         </Link>
                     </li>
                     <li>
-                        <Link id="ask" href="#">
+                        <Link id="ask" to="/ask-question">
                             <span data-hover="">Ask</span>
+                        </Link>
+                    </li>
+                    <li>
+                        <Link id="ask" to="/students">
+                            <span data-hover="">Students</span>
+                        </Link>
+                    </li>
+                    <li>
+                        <Link onClick={logout} to="/">
+                            <i className="fas fa-sign-out-alt"></i>{' '}
+                            <span className="hide-sm">Logout</span>
+                        </Link>
+                    </li>
+                    <li>
+                        <Link to="/edit-profile">
+                            <span className="hide-sm">Edit</span>
                         </Link>
                     </li>
                 </ul>
@@ -51,4 +69,4 @@ const Navbar = props => {
     );
 };
 
-export default Navbar;
+export default connect(null, { logout })(Navbar);

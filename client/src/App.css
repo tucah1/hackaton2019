@@ -12,6 +12,7 @@ html {
     max-width: 100%;
     position: relative;
     overflow-x: hidden;
+    background: #efede6;
 }
 a {
     text-decoration: none;
@@ -84,6 +85,9 @@ a {
     text-decoration: none;
     color: #777;
 }
+.links a:hover {
+    color: #fff;
+}
 
 .navigation ul li {
     list-style: none;
@@ -92,6 +96,7 @@ a {
 
 #loginBtn,
 #RegisterBtn {
+    font-weight: 900;
     font-family: 'Poppins', sans-serif;
     padding: 7px 12px;
     cursor: pointer;
@@ -99,6 +104,15 @@ a {
     color: #777;
     border-radius: 2px;
 }
+
+#loginBtn:hover {
+    color: #45f3ff;
+}
+
+#RegisterBtn:hover {
+    color: purple;
+}
+
 .menu {
     display: none;
     cursor: pointer;
@@ -363,17 +377,490 @@ a {
 
 /*Profile */
 
+/*.profile{
+position: relative;
+  background: url(../img/profile.jpg);
+  width: 100%;
+  height: 100vh;
+  overflow-x: hidden;
+  overflow-y: hidden;
+  background-position:center;
+  background-size:cover;
+  background-repeat:no-repeat;
+  text-align: center;
+}
+*/
+
 .profile {
-    width: 80%;
-    left: 10%;
+    position: relative;
     height: 100vh;
-    overflow-x: hidden;
+    width: 100%;
+    color: #000;
+    background: #efede6;
+    text-align: center;
+    overflow-y: hidden;
+}
+
+.container {
+    position: absolute;
+    left: 50%;
+    width: 60%;
+    height: 80%;
+    background: #fff;
+    box-shadow: 0 15px 15px rgba(0, 0, 0, 0.5);
+    transform: translateX(-50%);
+    top: 10%;
 }
 
 .personal {
+    position: absolute;
+    width: 100%;
+    height: auto;
+    left: 50%;
+    transform: translateX(-50%);
+    top: 100px;
 }
 
-.info {
+.personal img {
+    margin-top: 10px;
+    width: 150px;
+    height: auto;
 }
-.btns {
+
+#name {
+    font-size: 2em;
+    font-weight: 900;
+}
+.personal .labels {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    width: 100%;
+    color: #000;
+}
+.personal .labels {
+    width: 100%;
+}
+.info {
+    position: absolute;
+    left: 50%;
+    top: 30%;
+    width: 500px;
+    height: 600px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    color: #000;
+    transform: translateX(-50%);
+}
+
+.profileButtons {
+    margin-top: 20px;
+}
+
+.profileButtons a {
+    margin: 5px;
+    border: none;
+    padding: 5px 15px;
+    cursor: pointer;
+    outline: none;
+    background: #51b6e9;
+    color: #1a1a1a;
+    font-size: 15px;
+    border-radius: 2px;
+}
+.profileButtons button {
+    margin: 5px;
+    text-decoration: none;
+    border: none;
+    padding: 7px 22px;
+    cursor: pointer;
+    outline: none;
+    background: #51b6e9;
+    color: #1a1a1a;
+    font-size: 15px;
+    border-radius: 2px;
+}
+
+/*
+.innerProfile{
+	width: 100%;
+	margin-left: 10%;
+	margin-right: 10%;
+	display: grid;
+  grid-template-columns: repeat(auto-fit,minmax(40%,1fr));
+}
+
+
+.personal{
+	position: relative;
+	width: 100%;
+}
+
+.personal img{
+  width: 45%;
+  height: auto;
+  margin-bottom: 5%;
+  margin-left: 5%;
+}
+
+
+.labels{
+	display: flex;
+	justify-content: space-around;
+	flex-direction: column;
+}
+
+
+.personal img{
+	width: 150px;
+	height: auto;
+}
+
+.btns{
+	
+}
+
+
+.sectionTitle{
+  font-family: 'Bebas Neue', cursive;
+ text-align: center;
+ margin-top: 3%;
+}
+
+.info{
+  margin-top: 3%;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+
+
+.details{
+  text-align: center;
+  margin-top: 8%;
+}
+*/
+/*
+@media screen and (max-width: 991px){
+    .about{
+      margin-bottom: 2%;
+    }
+  }
+
+@media screen and (max-width: 913px){
+    .info-container{
+    flex-direction: column;
+    align-items: center;
+    }
+    #Adem{
+    width: 60%;
+    height: auto;
+    margin-left: 0;
+    margin-bottom: 5%;
+    }
+    .about{
+    margin-top: 3%;
+    margin-bottom: 5%;
+  }
+    
+}
+*/
+
+/*edit*/
+.containerE {
+    position: relative;
+    left: 50%;
+    width: 60%;
+    height: 90%;
+    top: 5%;
+    background: #fff;
+    box-shadow: 0 15px 15px rgba(0, 0, 0, 0.5);
+    transform: translateX(-50%);
+}
+
+.profileEdit {
+    top: 10%;
+    position: relative;
+    width: 50%;
+    padding: 20px;
+    left: 21%;
+}
+
+.profileEdit h2 {
+    width: 100%;
+    color: #374c9f;
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.profileEdit .rowF {
+    position: relative;
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+}
+
+.profileEdit .rowF .colF {
+    position: relative;
+    width: 100%;
+    padding: 0 10px;
+    margin: 30px 0 10px;
+    transition: 0.5s;
+}
+
+.profileEdit .rowF .inputBox {
+    position: relative;
+    width: 100%;
+    height: 30px;
+    color: #374c9f;
+}
+
+.profileEdit .rowF .inputBox input,
+.profileEdit .rowF .inputBox.textarea textarea {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: transparent;
+    box-shadow: none;
+    border: none;
+    outline: none;
+    font-size: 18px;
+    padding: 0 10px;
+    z-index: 1;
+    color: #1a1a1a;
+    transform: translateX(-50%);
+}
+
+.profileEdit .rowF .inputBox .textF {
+    position: absolute;
+    top: 0;
+    left: 0;
+    line-height: 30px;
+    font-size: 18px;
+    padding: 0 10px;
+    display: block;
+    transition: 0.5s;
+    pointer-events: none;
+}
+
+.profileEdit .rowF .inputBox input:focus + .textF,
+.profileEdit .rowF .inputBox input:valid + .textF {
+    top: -35px;
+    left: -10px;
+}
+
+.profileEdit .rowF .inputBox .lineF {
+    position: absolute;
+    bottom: 0;
+    display: block;
+    width: 95%;
+    height: 2px;
+    background: #374c9f;
+    transition: 0.5s;
+    border-radius: 2px;
+    pointer-events: none;
+}
+
+.profileEdit .rowF .inputBox input:focus ~ .lineF,
+.profileEdit .rowF .inputBox input:valid ~ .lineF {
+    height: 100%;
+}
+
+.profileEdit input[type='submit'] {
+    border: none;
+    padding: 7px 35px;
+    cursor: pointer;
+    outline: none;
+    background: #374c9f;
+    color: #fff;
+    font-size: 18px;
+    border-radius: 2px;
+}
+
+/*user list*/
+
+.profileL {
+    position: relative;
+    height: 100vh;
+    width: 100%;
+    color: #000;
+    background: #efede6;
+    text-align: center;
+    display: grid;
+}
+
+.search input {
+    margin-top: 50px;
+    margin-top: 5px;
+    border: none;
+    border-radius: 5px;
+    width: 50%;
+    height: 5vh;
+    justify-content: center;
+    text-align: center;
+    font-size: 15px;
+}
+.containerLX {
+    position: absolute;
+    left: 50%;
+    width: 60%;
+    height: 80%;
+    top: 10%;
+    transform: translateX(-50%);
+}
+
+.profileL .rowF {
+    position: relative;
+    width: 100%;
+    height: 25%;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    margin-bottom: 20px;
+}
+
+.containerL {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    background: #fff;
+    box-shadow: 0 15px 15px rgba(0, 0, 0, 0.5);
+}
+.containerL img {
+    position: absolute;
+    width: 100px;
+    height: auto;
+    left: 10%;
+    top: 30px;
+}
+
+.containerL .personal {
+    top: 30px;
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+.containerL .personal label a:hover {
+    color: #51b6e9;
+    cursor: pointer;
+}
+
+/*questions*/
+
+.Questions {
+    position: relative;
+    height: 100vh;
+    width: 100%;
+    color: #000;
+    background: #efede6;
+    text-align: center;
+}
+
+.Questions .rowF {
+    position: relative;
+    width: 100%;
+    height: 30%;
+    display: grid;
+    grid-template: repeat(auto-fit, minmax(300px, 1fr));
+    margin-bottom: 20px;
+}
+
+.containerQL {
+    position: absolute;
+    left: 50%;
+    width: 70%;
+    height: 80%;
+    top: 10%;
+    transform: translateX(-50%);
+}
+
+.containerQL h1 {
+}
+
+.margin {
+    margin-bottom: 5%;
+}
+
+.containerQ {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    background: #fff;
+    box-shadow: 0 10px 10px rgba(0, 0, 0, 0.5);
+}
+
+.containerQ h3 {
+    position: relative;
+    padding: 25px;
+    width: 100%;
+    text-align: left;
+    color: #374c9f;
+}
+
+.containerQ p {
+    position: relative;
+    text-align: left;
+    padding: 25px;
+    color: #000;
+}
+
+.containerQ .details {
+    position: absolute;
+    right: 5px;
+    bottom: 5px;
+    color: #333;
+    padding: 10px;
+}
+
+.containerQ .details span {
+    padding: 15px;
+}
+
+.containerQ .likeDislike {
+    position: absolute;
+    left: 5px;
+    bottom: 5px;
+    padding: 15px;
+}
+
+.containerQ .likeDislike i {
+    padding: 5px;
+    cursor: pointer;
+}
+
+/*question form*/
+
+.QuestionsF {
+    position: relative;
+    height: 100vh;
+    width: 100%;
+    color: #000;
+    background: #efede6;
+    text-align: center;
+}
+
+.containerQF {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    background: #fff;
+    box-shadow: 0 10px 10px rgba(0, 0, 0, 0.5);
+}
+
+.containerQFL {
+    position: absolute;
+    left: 50%;
+    width: 70%;
+    height: 80%;
+    top: 10%;
+    transform: translateX(-50%);
+}
+
+.all {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    text-align: center;
+    margin-top: 50px;
 }

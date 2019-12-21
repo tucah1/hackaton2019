@@ -52,7 +52,7 @@ const Register = ({ setAlert, register, auth: { isAuthenticated } }) => {
 
     //Redirect if is logged in
     if (isAuthenticated) {
-        return <Redirect to="/" />;
+        return <Redirect to="/questions" />;
     }
 
     return (
