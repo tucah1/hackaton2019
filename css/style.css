@@ -75,6 +75,9 @@ a{
     text-decoration: none;
     color: #777;
 }
+.links a:hover{
+    color: #fff;
+}
 
 
 .navigation ul li{
@@ -83,6 +86,7 @@ a{
 }
 
 #loginBtn, #RegisterBtn{
+	font-weight: 900;
   font-family: 'Poppins', sans-serif;
   padding: 7px 12px;
   cursor: pointer;
@@ -90,6 +94,15 @@ a{
   color: #777;
   border-radius: 2px;
 }
+
+#loginBtn:hover{
+	color: #45f3ff;
+}
+
+#RegisterBtn:hover{
+	color: purple;
+}
+
 .menu{
     display: none;
     cursor: pointer;
@@ -362,20 +375,194 @@ a{
 
 /*Profile */
 
-.profile{
-  width: 80%;
-  left: 10%;
+/*.profile{
+position: relative;
+  background: url(../img/profile.jpg);
+  width: 100%;
   height: 100vh;
   overflow-x: hidden;
+  overflow-y: hidden;
+  background-position:center;
+  background-size:cover;
+  background-repeat:no-repeat;
+  text-align: center;
+}
+*/
+
+
+
+.profile{
+  position: relative;
+  height:100vh;
+  width: 100%;
+  color:#666;
+  background: #301309;
+  text-align: center;
+  overflow-y: hidden;
 }
 
-.personal{
+.container{
+	position: absolute;
+	left:50%;
+	width: 60%;
+	height: 80%;
+	background: #0c4238;
+	box-shadow: 0 15px 15px rgba(0,0,0,.5);
+	transform:translateX(-50%);
+	top: 10%;
+}
 
+
+.personal{
+	position: absolute;
+	width: 100%;
+	height: auto;
+	left: 50%;
+	transform:translateX(-50%);
+	top: 100px;
+	
+}
+
+.personal img{
+	margin-top: 10px;
+	width: 150px;
+	height: auto;
+}
+
+#name{
+	font-size: 2em;
+}
+.personal .labels{
+	display: flex;
+  	justify-content: center;
+  	flex-direction: column;
+	width: 100%;
+	color: #fff;
+}
+.personal .labels{
+	width: 100%;
+}
+.info{
+  position: absolute;
+  left: 50%;
+  top: 30%;
+  width: 500px;
+  height: 600px;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  color: #fff;
+  transform:translateX(-50%);
+
+}
+
+.profileButtons{
+	margin-top: 20px;
+}
+
+.profileButtons a{
+  border: none;
+  padding: 5px 15px;
+  cursor: pointer;
+  outline: none;
+  background: #51B6E9;
+  color: #1a1a1a;
+  font-size: 15px;
+  border-radius: 2px;
+}
+.profileButtons button{
+  text-decoration: none;
+  border: none;
+  padding: 7px 22px;
+  cursor: pointer;
+  outline: none;
+  background: #51B6E9;
+  color: #1a1a1a;
+  font-size: 15px;
+  border-radius: 2px;
+}
+
+/*
+.innerProfile{
+	width: 100%;
+	margin-left: 10%;
+	margin-right: 10%;
+	display: grid;
+  grid-template-columns: repeat(auto-fit,minmax(40%,1fr));
+}
+
+
+.personal{
+	position: relative;
+	width: 100%;
+}
+
+.personal img{
+  width: 45%;
+  height: auto;
+  margin-bottom: 5%;
+  margin-left: 5%;
+}
+
+
+.labels{
+	display: flex;
+	justify-content: space-around;
+	flex-direction: column;
+}
+
+
+.personal img{
+	width: 150px;
+	height: auto;
+}
+
+.btns{
+	
+}
+
+
+.sectionTitle{
+  font-family: 'Bebas Neue', cursive;
+ text-align: center;
+ margin-top: 3%;
 }
 
 .info{
-
+  margin-top: 3%;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
 }
-.btns{
 
+
+.details{
+  text-align: center;
+  margin-top: 8%;
 }
+*/
+/*
+@media screen and (max-width: 991px){
+    .about{
+      margin-bottom: 2%;
+    }
+  }
+
+@media screen and (max-width: 913px){
+    .info-container{
+    flex-direction: column;
+    align-items: center;
+    }
+    #Adem{
+    width: 60%;
+    height: auto;
+    margin-left: 0;
+    margin-bottom: 5%;
+    }
+    .about{
+    margin-top: 3%;
+    margin-bottom: 5%;
+  }
+    
+}
+*/
