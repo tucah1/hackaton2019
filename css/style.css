@@ -785,7 +785,7 @@ width:60%;
 	width: 100%;
 	height: 100%;
 	background: #fff;
-	box-shadow: 0 15px 15px rgba(0,0,0,.5);
+	box-shadow: 0 8px 8px rgba(0,0,0,.5);
 }
 .containerL img{
 	position: absolute;
@@ -802,9 +802,23 @@ width:60%;
 	height: 100%;
 }
 
+.labels1{
+	display: flex;
+	justify-content: center;
+	flex-direction: column;
+}
+
+.containerL .personal label a{
+	color: #000;
+}
+
 .containerL .personal label a:hover{
 	color: #51B6E9;
 	cursor: pointer;
+}
+
+.containerL .personal label a:visited{
+	color: #000;
 }
 
 
