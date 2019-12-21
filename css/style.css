@@ -11,6 +11,7 @@ body, html{
     max-width: 100%;
     position: relative;
     overflow-x: hidden;
+    background: linear-gradient(90deg, rgba(128,176,230,1) 16%, rgba(18,12,92,1) 62%, rgba(79,2,96,1) 100%);
 }
 
 .heading{
@@ -157,3 +158,135 @@ body, html{
   	font-size: 18px;
   	border-radius: 2px;
   }
+
+  /*Register and login*/
+ .regForm{
+ 	position: relative;
+ 	left: 22%;
+ 	width: 60%;
+ 	height: 100vh;
+ }
+
+ .register{
+  width: 80%;
+  padding:20px;
+}
+
+.register h2{
+  width: 100%;
+  color: #45f3ff;
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+.register .rowF{
+  position: relative;
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(auto-fit,minmax(300px,1fr));
+
+}
+
+.register .rowF .colF{
+  position: relative;
+  width: 100%;
+  padding:0 10px;
+  margin: 30px 0 10px;
+  transition: 0.5s;
+}
+
+.register .rowF .inputBox{
+  position: relative;
+  width: 100%;
+  height: 40px;
+  color: #45f3ff;
+}
+
+.register .rowF .inputBox input,
+.register .rowF .inputBox.textarea textarea{
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: transparent;
+  box-shadow: none;
+  border: none;
+  outline: none;
+  font-size: 18px;
+  padding:0 10px;
+  z-index: 1;
+  color: #1a1a1a;
+}
+
+.register .rowF .inputBox .textF{
+  position: absolute;
+  top: 0;
+  left: 0;
+  line-height: 40px;
+  font-size: 18px;
+  padding:0 10px;
+  display: block;
+  transition: 0.5s;
+  pointer-events: none;
+
+}
+
+.register .rowF .inputBox input:focus + .textF,
+.register .rowF .inputBox input:valid + .textF{
+  top: -35px;
+  left: -10px;
+
+}
+
+.register .rowF .inputBox .lineF{
+  position: absolute;
+  bottom: 0;
+  display: block;
+  width: 95%;
+  height: 2px;
+  background: #45f3ff;
+  transition: 0.5s;
+  border-radius: 2px;
+  pointer-events: none;
+}
+
+.register .rowF .inputBox input:focus ~ .lineF,
+.register .rowF .inputBox input:valid ~ .lineF{
+  height: 100%;
+
+}
+
+.register .rowF .inputBox.textarea{
+  position: relative;
+  bottom: 0;
+  width: 100%;
+  height: 100px;
+  padding: 10px 0;
+ 
+}
+
+.register .rowF .inputBox.textarea textarea{
+  height: 100%;
+  resize: none;
+}
+
+.register .rowF .inputBox textarea:focus + .textF,
+.register .rowF .inputBox textarea:valid + .textF{
+  top: -35px;
+  left: -10px;
+
+}
+.register .rowF .inputBox textarea:focus ~ .lineF,
+.register .rowF .inputBox textarea:valid ~ .lineF{
+  height: 100%;
+
+}
+.register input[type="submit"]{
+  border: none;
+  padding: 7px 35px;
+  cursor: pointer;
+  outline: none;
+  background: #45f3ff;
+  color: #1a1a1a;
+  font-size: 18px;
+  border-radius: 2px;
+}
