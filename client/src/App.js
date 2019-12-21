@@ -10,6 +10,7 @@ import Questions from './components/questions/Questions';
 import Students from './components/students/Students';
 import './App.css';
 import PrivateRoute from './components/routing/PrivateRoute';
+import AskQuestion from './components/questions/AskQuestion';
 
 // Redux
 import { Provider } from 'react-redux'; //combine react and redux
@@ -29,6 +30,7 @@ const App = () => {
                     <Route exact path="/profile/:id" component={Profile} />
                     <Route exact path="/questions" component={Questions} />
                     <Route exact path="/students" component={Students} />
+                    <Route exact path="/ask-question" component={AskQuestion} />
                     <PrivateRoute
                         exact
                         path="/edit-profile"

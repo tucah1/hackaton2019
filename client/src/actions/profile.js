@@ -14,7 +14,7 @@ import setAuthToken from '../utils/setAuthToken';
 //Get current users profile
 export const getCurrentProfile = () => async dispatch => {
     try {
-        //setAuthToken(localStorage.token);
+        setAuthToken(localStorage.token);
         const res = await axios.get('/api/profile/me');
 
         dispatch({
