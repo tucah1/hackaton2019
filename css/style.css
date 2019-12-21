@@ -12,6 +12,9 @@ body, html{
     position: relative;
     overflow-x: hidden;
 }
+a{
+	text-decoration: none;
+}
 
 /*body backgrounds*/
 .regBody{
@@ -79,14 +82,12 @@ body, html{
     font-weight: 900;
 }
 
-.navigation input[type="submit"]{
-  border: none;
-  padding: 7px 15px;
+#loginBtn, #RegisterBtn{
+  font-family: 'Poppins', sans-serif;
+  padding: 7px 12px;
   cursor: pointer;
   outline: none;
-  background: #888;
-  color: #000;
-  font-size: 18px;
+  color: #777;
   border-radius: 2px;
 }
 .menu{
@@ -149,9 +150,16 @@ body, html{
   }
 }
 
+.form{
+	position: relative;
+	display: flex;
+	justify-content: center;
+	margin:0;
+}
+
 .btnLogin{
+	margin-right: 2%;
 	background: #88FEFE;
-	border: none;
  	padding: 7px 15px;
   	cursor: pointer;
   	outline: none;
@@ -161,7 +169,6 @@ body, html{
 }
 .btnRegister{
 	background: #FEFE88;
-	border: none;
  	padding: 7px 15px;
   	cursor: pointer;
   	outline: none;
