@@ -11,8 +11,18 @@ body, html{
     max-width: 100%;
     position: relative;
     overflow-x: hidden;
-    background: linear-gradient(90deg, rgba(128,176,230,1) 16%, rgba(18,12,92,1) 62%, rgba(79,2,96,1) 100%);
 }
+
+/*body backgrounds*/
+.regBody{
+	background: linear-gradient(90deg, rgba(128,176,230,1) 16%, rgba(18,12,92,1) 62%, rgba(79,2,96,1) 100%);
+}
+.logBody{
+	background: linear-gradient(90deg, rgba(128,176,230,1) 16%, rgba(18,12,92,1) 62%, rgba(79,2,96,1) 100%);
+}
+
+
+/*opening page*/
 
 .heading{
   background: url(../img/heading1.jpg);
