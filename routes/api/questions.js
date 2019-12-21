@@ -73,7 +73,11 @@ router.get('/search-questions/:searchText', auth, async (req, res) => {
 			questions = questions.filter(question => {
 				let result = tags.map(tag => {
 					let res = question.tags.filter(qTag => {
-						if (qTag.tag === tag.tag) {
+						if (
+							qTag.tag
+								.toLowerCase()
+								.includes(tag.tag.toLowerCase())
+						) {
 							return true
 						} else {
 							return false
