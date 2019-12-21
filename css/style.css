@@ -300,3 +300,37 @@ body, html{
   font-size: 18px;
   border-radius: 2px;
 }
+
+/*alerts*/
+.alert {
+    padding: 0.8rem;
+    margin: 1rem 0;
+    opacity: 0.9;
+    background: #f4f4f4;
+    color: #333;
+}
+.alert-primary {
+    background: #3e8152;;
+    color: #fff;
+}
+.alert-light {
+    background: #f4f4f4;
+    color: #333;
+}
+.alert-dark {
+    background: #36383a;
+    color: #fff;
+}
+.alert-danger {
+    background: #941a26;
+    color: #fff;
+}
+.alert-success {
+    background: #28a745;
+    color: #fff;
+}
+.alert-white {
+    background: #fff;
+    color: #333;
+    border: #ccc solid 1px;
+}
