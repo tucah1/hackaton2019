@@ -376,22 +376,6 @@ a{
 
 /*Profile */
 
-/*.profile{
-position: relative;
-  background: url(../img/profile.jpg);
-  width: 100%;
-  height: 100vh;
-  overflow-x: hidden;
-  overflow-y: hidden;
-  background-position:center;
-  background-size:cover;
-  background-repeat:no-repeat;
-  text-align: center;
-}
-*/
-
-
-
 .profile{
   position: relative;
   height:100vh;
@@ -411,6 +395,80 @@ position: relative;
 	box-shadow: 0 15px 15px rgba(0,0,0,.5);
 	transform:translateX(-50%);
 	top: 10%;
+	margin: auto;
+	text-align: center;
+}
+
+.insideContainer{
+	position: relative;
+	max-width: 100%;
+	max-height: 100%;
+	padding: 10px;
+}
+
+.container img{
+	width: 200px;
+	height: auto;
+}
+
+.profileNav{
+	position: relative;
+	width: 100%;
+	height: 5vh;
+	text-align: right;
+}
+
+.profileNav a{
+  border: none;
+  padding: 5px 15px;
+  cursor: pointer;
+  outline: none;
+  background: #51B6E9;
+  color: #1a1a1a;
+  font-size: 15px;
+  border-radius: 2px;
+}
+.profileNav button{
+  text-decoration: none;
+  border: none;
+  padding: 7px 22px;
+  cursor: pointer;
+  outline: none;
+  background: #51B6E9;
+  color: #1a1a1a;
+  font-size: 15px;
+  border-radius: 2px;
+}
+
+.insideContainer .labels{
+	display: flex;
+  	justify-content: center;
+  	flex-direction: column;
+	color: #000;
+}
+
+#name{
+	font-size: 2em;
+	font-weight: 900;
+}
+
+.insideContainer hr{
+	items-align: left;
+
+}
+
+
+/*
+.containerA{
+	position: absolute;
+	width: 60%;
+	height: 40%;
+	left: 50%;
+	top: 10%;
+	transform: translateX(-50%);
+	background: #fff;
+	box-shadow: 0 15px 15px rgba(0,0,0,.5);
+	text-align: center;
 }
 
 
@@ -486,92 +544,7 @@ position: relative;
   border-radius: 2px;
 }
 
-/*
-.innerProfile{
-	width: 100%;
-	margin-left: 10%;
-	margin-right: 10%;
-	display: grid;
-  grid-template-columns: repeat(auto-fit,minmax(40%,1fr));
-}
-
-
-.personal{
-	position: relative;
-	width: 100%;
-}
-
-.personal img{
-  width: 45%;
-  height: auto;
-  margin-bottom: 5%;
-  margin-left: 5%;
-}
-
-
-.labels{
-	display: flex;
-	justify-content: space-around;
-	flex-direction: column;
-}
-
-
-.personal img{
-	width: 150px;
-	height: auto;
-}
-
-.btns{
-	
-}
-
-
-.sectionTitle{
-  font-family: 'Bebas Neue', cursive;
- text-align: center;
- margin-top: 3%;
-}
-
-.info{
-  margin-top: 3%;
-  display: flex;
-  justify-content: center;
-  flex-direction: column;
-}
-
-
-.details{
-  text-align: center;
-  margin-top: 8%;
-}
 */
-/*
-@media screen and (max-width: 991px){
-    .about{
-      margin-bottom: 2%;
-    }
-  }
-
-@media screen and (max-width: 913px){
-    .info-container{
-    flex-direction: column;
-    align-items: center;
-    }
-    #Adem{
-    width: 60%;
-    height: auto;
-    margin-left: 0;
-    margin-bottom: 5%;
-    }
-    .about{
-    margin-top: 3%;
-    margin-bottom: 5%;
-  }
-    
-}
-*/
-
-
 /*edit*/
 .containerE{
 	position: relative;
@@ -634,8 +607,13 @@ position: relative;
   font-size: 18px;
   padding:0 10px;
   z-index: 1;
-  color: #1a1a1a;
+  color: #fff;
   transform:translateX(-50%);
+}
+
+.profileEdit .rowF .inputBox input
+{
+	padding: 0 20px; 
 }
 
 .profileEdit .rowF .inputBox .textF{
@@ -653,6 +631,7 @@ position: relative;
 
 .profileEdit .rowF .inputBox input:focus + .textF,
 .profileEdit .rowF .inputBox input:valid + .textF{
+	padding: 0 20px; 
   top: -35px;
   left: -10px;
 
@@ -672,6 +651,7 @@ position: relative;
 
 .profileEdit .rowF .inputBox input:focus ~ .lineF,
 .profileEdit .rowF .inputBox input:valid ~ .lineF{
+	padding: 0 20px; 
   height: 100%;
 
 }
@@ -857,11 +837,19 @@ position: relative;
 }
 
 .containerQF{
-	position: relative;
-	width: 100%;
-	height: 100%;
+	position: absolute;
+	width: 60%;
+	height: 70%;
+	left: 50%;
+	top: 10%;
+	transform: translateX(-50%);
 	background: #fff;
-	box-shadow: 0 10px 10px rgba(0,0,0,.5);
+	box-shadow: 0 15px 15px rgba(0,0,0,.5);
+	text-align: center;
+}
+
+.containerQF h1{
+
 }
 
 .containerQFL{
@@ -871,4 +859,70 @@ position: relative;
 	height: 80%;
 	top: 10%;
 	transform: translateX(-50%);
+}
+
+.newPostForm{
+	width: 50%;
+	position: absolute;
+	left:49%;
+	transform: translateX(-50%);
+	text-align: center;
+	display: flex;
+	justify-content: center;
+	flex-direction: column;
+}
+
+.newPostForm div{
+	margin: 20px;
+	width: 100%;
+
+}
+
+.newPostForm div label{
+	margin-right: 10px;
+
+}
+
+.newPostForm div input{
+	border: 1px solid #374C9F;
+	border-radius: 5px;
+	width: 100%;
+	height: 5vh;
+	justify-content: center;
+	text-align: center;
+	font-size: 15px;
+}
+
+.newPostForm div textarea{
+	border: 1px solid #374C9F;
+	border-radius: 5px;
+	width: 100%;
+	height: 12vh;
+	justify-content: center;
+	text-align: center;
+	font-size: 15px;
+}
+
+.newPostForm input[type="submit"]{
+	position: relative;
+	left: 53%;
+	transform: translateX(-50%);
+	border: none;
+	width: 50%;
+  	padding: 7px 35px;
+  	cursor: pointer;
+  	outline: none;
+ 	background: #374C9F;
+  	color: #fff;
+  	font-size: 18px;
+  	border-radius: 2px;
+
+}
+
+.all {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    text-align: center;
+    margin-top: 50px;
 }

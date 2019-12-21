@@ -3,23 +3,26 @@
 <head>
 	<title>Questions</title>
 	<link rel="stylesheet" type="text/css" href="css/style.css">
-	<link
-            rel="stylesheet"
-            href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
-            integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf"
-            crossorigin="anonymous"
-        />
 </head>
 <body>
 					
 	<div class="QuestionsF">
-		<div class="containerQFL">
+		<div class="containerQF">
 			<h1>New Post</h1>
 			<form class="newPostForm">
-				<label>Title:</label>
-				<input type="text" name="title" placeholder="Subject"/>
-				<label>Question:</label>
-				<textarea></textarea>
+				<div class="postTitle">
+					<label>Title:</label>
+					<input type="text" name="title" placeholder="Subject"/>
+				</div>
+				<div class="postTitle">
+					<label>Tags:</label>
+					<input type="text" name="tags" placeholder="e.g. etf data-structures 2018"/>
+				</div>
+				<div class="postQuestion">
+					<label>Question:</label>
+					<textarea required></textarea>
+				</div>
+				<input type="submit" name="postSubmit"/>
 			</form>
 		</div>
 	</div>
