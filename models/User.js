@@ -22,6 +22,22 @@ const UserSchema = new mongoose.Schema({
 		type: String,
 		required: true
 	},
+	university: {
+		type: String,
+		required: true
+	},
+	faculty: {
+		type: String,
+		required: true
+	},
+	department: {
+		type: String,
+		required: true
+	},
+	popularity: {
+		type: Number,
+		required: true
+	},
 	date: {
 		type: Date,
 		default: Date.now
