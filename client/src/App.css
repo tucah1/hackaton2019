@@ -1,38 +1,379 @@
-.App {
-  text-align: center;
+@import url('https://fonts.googleapis.com/css?family=Poppins&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Bebas+Neue&display=swap');
+* {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+body,
+html {
+    font-family: 'Poppins', sans-serif;
+    box-sizing: border-box;
+    max-width: 100%;
+    position: relative;
+    overflow-x: hidden;
+}
+a {
+    text-decoration: none;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+/*body backgrounds*/
+.regBody {
+    background: linear-gradient(
+        90deg,
+        rgba(128, 176, 230, 1) 16%,
+        rgba(18, 12, 92, 1) 62%,
+        rgba(79, 2, 96, 1) 100%
+    );
+}
+.logBody {
+    background: linear-gradient(
+        90deg,
+        rgba(128, 176, 230, 1) 16%,
+        rgba(18, 12, 92, 1) 62%,
+        rgba(79, 2, 96, 1) 100%
+    );
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+/*opening page*/
+
+.heading {
+    background: url(./img/heading1.jpg);
+    width: 100%;
+    height: 100vh;
+    overflow-x: hidden;
+    overflow-y: hidden;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+/*Navigation*/
+.navigation {
+    position: relative;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    min-height: 8vh;
+    background-color: rgb(0, 0, 0, 1);
 }
 
-.App-link {
-  color: #61dafb;
+.navigation .logo {
+    cursor: pointer;
+    display: flex;
+    align-items: center;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.navigation .logo img {
+    width: 5vh;
+    height: auto;
+}
+
+.navigation .logo h2 {
+    color: #999;
+    text-transform: uppercase;
+    margin-left: 5px;
+}
+.navigation .links {
+    display: flex;
+    justify-content: space-around;
+    width: 35%;
+}
+
+.links a {
+    text-decoration: none;
+    color: #777;
+}
+
+.navigation ul li {
+    list-style: none;
+    font-weight: 900;
+}
+
+#loginBtn,
+#RegisterBtn {
+    font-family: 'Poppins', sans-serif;
+    padding: 7px 12px;
+    cursor: pointer;
+    outline: none;
+    color: #777;
+    border-radius: 2px;
+}
+.menu {
+    display: none;
+    cursor: pointer;
+}
+
+.menu div {
+    width: 25px;
+    height: 3px;
+    background-color: #999;
+    margin: 5px;
+}
+
+/*welcome title text and buttons*/
+
+.welcome {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+}
+
+.welcomeInner {
+    display: block;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.welcome .welcomeInner h1 {
+    font-family: 'Bebas Neue', cursive;
+    background: url(./img/2.jpg);
+    text-transform: uppercase;
+    font-size: 7em;
+    font-weight: bold;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: moving 40s linear infinite;
+}
+
+.welcome .welcomeInner p {
+    display: block;
+    font-family: 'Bebas Neue', cursive;
+    color: #000;
+    padding: 10px;
+}
+
+@keyframes moving {
+    from {
+        background-position: 0 0;
+    }
+    50% {
+        background-position: 100% 100%;
+    }
+    to {
+        background-position: 0 0;
+    }
+}
+
+.form {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    margin: 0;
+}
+
+.btnLogin {
+    margin-right: 2%;
+    background: #88fefe;
+    padding: 7px 15px;
+    cursor: pointer;
+    outline: none;
+    color: #000;
+    font-size: 18px;
+    border-radius: 2px;
+}
+.btnRegister {
+    background: #fefe88;
+    padding: 7px 15px;
+    cursor: pointer;
+    outline: none;
+    color: #000;
+    font-size: 18px;
+    border-radius: 2px;
+}
+
+/*Register and login*/
+.regForm {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    align-items: center;
+}
+
+.register {
+    position: relative;
+    width: 60%;
+    padding: 20px;
+    left: 18%;
+}
+
+.register h2 {
+    width: 100%;
+    color: #45f3ff;
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.register .rowF {
+    position: relative;
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+}
+
+.register .rowF .colF {
+    position: relative;
+    width: 100%;
+    padding: 0 10px;
+    margin: 30px 0 10px;
+    transition: 0.5s;
+}
+
+.register .rowF .inputBox {
+    position: relative;
+    width: 100%;
+    height: 40px;
+    color: #45f3ff;
+}
+
+.register .rowF .inputBox input,
+.register .rowF .inputBox.textarea textarea {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: transparent;
+    box-shadow: none;
+    border: none;
+    outline: none;
+    font-size: 18px;
+    padding: 0 10px;
+    z-index: 1;
+    color: #1a1a1a;
+}
+
+.register .rowF .inputBox .textF {
+    position: absolute;
+    top: 0;
+    left: 0;
+    line-height: 40px;
+    font-size: 18px;
+    padding: 0 10px;
+    display: block;
+    transition: 0.5s;
+    pointer-events: none;
+}
+
+.register .rowF .inputBox input:focus + .textF,
+.register .rowF .inputBox input:valid + .textF {
+    top: -35px;
+    left: -10px;
+}
+
+.register .rowF .inputBox .lineF {
+    position: absolute;
+    bottom: 0;
+    display: block;
+    width: 95%;
+    height: 2px;
+    background: #45f3ff;
+    transition: 0.5s;
+    border-radius: 2px;
+    pointer-events: none;
+}
+
+.register .rowF .inputBox input:focus ~ .lineF,
+.register .rowF .inputBox input:valid ~ .lineF {
+    height: 100%;
+}
+
+.register .rowF .inputBox.textarea {
+    position: relative;
+    bottom: 0;
+    width: 100%;
+    height: 100px;
+    padding: 10px 0;
+}
+
+.register .rowF .inputBox.textarea textarea {
+    height: 100%;
+    resize: none;
+}
+
+.register .rowF .inputBox textarea:focus + .textF,
+.register .rowF .inputBox textarea:valid + .textF {
+    top: -35px;
+    left: -10px;
+}
+.register .rowF .inputBox textarea:focus ~ .lineF,
+.register .rowF .inputBox textarea:valid ~ .lineF {
+    height: 100%;
+}
+.register input[type='submit'] {
+    border: none;
+    padding: 7px 35px;
+    cursor: pointer;
+    outline: none;
+    background: #45f3ff;
+    color: #1a1a1a;
+    font-size: 18px;
+    border-radius: 2px;
+}
+
+.btnCont {
+    width: 100%;
+    text-align: center;
+}
+
+.redirect {
+    position: relative;
+    text-align: center;
+    width: 100%;
+}
+
+.redirect a {
+    color: #45f3ff;
+}
+
+/*alerts*/
+.alert {
+    padding: 0.8rem;
+    margin: 1rem 0;
+    opacity: 0.9;
+    background: #f4f4f4;
+    color: #333;
+}
+.alert-primary {
+    background: #3e8152;
+    color: #fff;
+}
+.alert-light {
+    background: #f4f4f4;
+    color: #333;
+}
+.alert-dark {
+    background: #36383a;
+    color: #fff;
+}
+.alert-danger {
+    background: #941a26;
+    color: #fff;
+}
+.alert-success {
+    background: #28a745;
+    color: #fff;
+}
+.alert-white {
+    background: #fff;
+    color: #333;
+    border: #ccc solid 1px;
+}
+
+/*Profile */
+
+.profile {
+    width: 80%;
+    left: 10%;
+    height: 100vh;
+    overflow-x: hidden;
+}
+
+.personal {
+}
+
+.info {
+}
+.btns {
 }
