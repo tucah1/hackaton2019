@@ -721,6 +721,15 @@ position: relative;
 	transform: translateX(-50%);
 }
 
+.profileL .rowF{
+  position: relative;
+  width: 100%;
+  height: 25%;
+  display: grid;
+  grid-template-columns: repeat(auto-fit,minmax(300px,1fr));
+  margin-bottom: 20px;
+}
+
 .containerL{
 	position: relative;
 	width: 100%;
@@ -728,29 +737,26 @@ position: relative;
 	background: #fff;
 	box-shadow: 0 15px 15px rgba(0,0,0,.5);
 }
+.containerL img{
+	position: absolute;
+	width: 100px;
+	height: auto;
+	left: 10%;
+	top:30px;
+}
 
 .containerL .personal{
+	top: 30px;
 	position: relative;
 	width: 100%;
 	height: 100%;
 }
 
-
-.profileL .rowF{
-  position: relative;
-  width: 100%;
-  height: 60%;
-  display: grid;
-  grid-template-columns: repeat(auto-fit,minmax(300px,1fr));
-  grid-gap: 20px;
+.containerL .personal label a:hover{
+	color: #51B6E9;
+	cursor: pointer;
 }
 
-.profileL .rowF .colF{
-  position: relative;
-  width: 100%;
-  margin: 10px;
-  transition: 0.5s;
-}
 
 /*questions*/
 
@@ -839,3 +845,30 @@ position: relative;
 
 }
 
+/*question form*/
+
+.QuestionsF{
+  position: relative;
+  height:100vh;
+  width: 100%;
+  color:#000;
+  background: #EFEDE6;
+  text-align: center;
+}
+
+.containerQF{
+	position: relative;
+	width: 100%;
+	height: 100%;
+	background: #fff;
+	box-shadow: 0 10px 10px rgba(0,0,0,.5);
+}
+
+.containerQFL{
+	position: absolute;
+	left: 50%;
+	width: 70%;
+	height: 80%;
+	top: 10%;
+	transform: translateX(-50%);
+}
