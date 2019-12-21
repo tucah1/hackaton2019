@@ -494,8 +494,8 @@ width:60%;
 .containerDown{
 	position: relative;
 	width: 60%;
-	height: auto;
 	min-height: 170px;
+	height: auto;
 	background: #fff;
 	box-shadow: 0 8px 8px rgba(0,0,0,.5);
 	margin: auto;
@@ -506,6 +506,12 @@ width:60%;
 
 .containerDown h3, p{
 	padding: 20px;
+}
+
+.containerDown p{
+	min-height: 80px;
+	height: auto;
+
 }
 .containerDown .details{
 	float: right;
@@ -826,7 +832,7 @@ width:60%;
 
 .Questions{
   position: relative;
-  height:100vh;
+  height:100%;
   width: 100%;
   color:#000;
   background: #EFEDE6;
@@ -836,7 +842,8 @@ width:60%;
 .Questions .rowF{
   position: relative;
   width: 100%;
-  height: 30%;
+  min-height: 30%;
+  height: auto;
   display: grid;
   grid-template: repeat(auto-fit,minmax(300px,1fr));
   margin-bottom: 20px;
@@ -852,11 +859,6 @@ width:60%;
 	
 }
 
-.containerQL h1{
-	
-	
-}
-
 .margin{
 	margin-bottom: 5%;
 }
@@ -864,7 +866,7 @@ width:60%;
 .containerQ{
 	position: relative;
 	width: 100%;
-	height: 100%;
+	min-height: 30%;
 	background: #fff;
 	box-shadow: 0 10px 10px rgba(0,0,0,.5);
 }
@@ -880,31 +882,39 @@ width:60%;
 .containerQ p{
 	position: relative;
 	text-align: left;
+	min-height: 80px;
+	height: auto;
 	padding: 25px;
 	color: #000;
 }
 
 .containerQ .details{
-	position: absolute;
-	right: 5px;
-	bottom: 5px;
+	position: relative;
+	width: 100%;
+	display: flex;
+	justify-content: space-between;
 	color: #333;
-	padding: 10px;
+	padding-right: 10px;
+	padding-bottom: 10px;
 }
 
 .containerQ .details span{
 	padding: 15px;
 }
 
+.containerQ .details div{
+	display: flex;
+}
+
+
 .containerQ .likeDislike{
-	position: absolute;
-	left: 5px;
-	bottom: 5px;
+	position: relative;
+	text-align: left;
 	padding: 15px;
 }
 
 .containerQ .likeDislike i{
-		padding: 5px;
+		padding-left: 30px;
 		cursor: pointer;
 
 }
@@ -1005,4 +1015,62 @@ width:60%;
     height: 100vh;
     text-align: center;
     margin-top: 50px;
+}
+
+/*open question*/
+
+.containerOQ{
+	position: relative;
+	width: 60%;
+	min-height: 300px;
+	background: #fff;
+	box-shadow: 0 8px 8px rgba(0,0,0,.5);
+	margin: auto;
+	margin-top: 5%;
+	margin-bottom: 5%;
+	text-align: center;
+}
+
+
+.insideContainerOQ{
+	position: relative;
+	text-align: left;
+	max-width: 100%;
+	max-height: 100%;
+	padding: 20px;
+}
+
+.insideContainerOQ p{
+	min-height: 150px;
+	height: auto;
+
+}
+
+.insideContainerOQ .detailsOQ{
+	position: relative;
+	width: 100%;
+	text-align: right;
+}
+
+.insideContainerOQ .detailsOQ button{
+  border: none;
+  border-radius: 15px;
+  padding: 5px 20px;
+  cursor: pointer;
+  outline: none;
+  background: red;
+  color: #1a1a1a;
+  font-size: 18px;
+  border-radius: 2px;
+  margin: auto;
+  margin-left: 15px;
+}
+
+.insideContainerOQ .likeDislikeOQ{
+	width: 100%
+	text-align: left;
+}
+
+.insideContainerOQ .likeDislikeOQ i{
+	padding: 10px; 
 }
