@@ -30,7 +30,7 @@ a{
 /*opening page*/
 
 .heading{
-  background: url(../img/heading1.jpg);
+  background: url(./img/heading1.jpg);
   width: 100%;
   height: 100vh;
   overflow-x: hidden;
@@ -137,7 +137,7 @@ a{
 
 .welcome .welcomeInner h1{
   font-family: 'Bebas Neue', cursive;
-  background: url(../img/2.jpg);
+  background: url(./img/2.jpg);
   text-transform: uppercase;
   font-size: 7em;
   font-weight: bold;
