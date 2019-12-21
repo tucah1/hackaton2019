@@ -395,8 +395,8 @@ position: relative;
   position: relative;
   height:100vh;
   width: 100%;
-  color:#666;
-  background: #301309;
+  color:#000;
+  background: #EFEDE6;
   text-align: center;
   overflow-y: hidden;
 }
@@ -406,7 +406,7 @@ position: relative;
 	left:50%;
 	width: 60%;
 	height: 80%;
-	background: #0c4238;
+	background: #fff;
 	box-shadow: 0 15px 15px rgba(0,0,0,.5);
 	transform:translateX(-50%);
 	top: 10%;
@@ -437,7 +437,7 @@ position: relative;
   	justify-content: center;
   	flex-direction: column;
 	width: 100%;
-	color: #fff;
+	color: #000;
 }
 .personal .labels{
 	width: 100%;
@@ -451,7 +451,7 @@ position: relative;
   display: flex;
   justify-content: center;
   flex-direction: column;
-  color: #fff;
+  color: #000;
   transform:translateX(-50%);
 
 }
@@ -566,3 +566,120 @@ position: relative;
     
 }
 */
+
+
+/*edit*/
+.containerE{
+	position: relative;
+	left:50%;
+	width: 60%;
+	height: 90%;
+	top: 5%;
+	background: #fff;
+	box-shadow: 0 15px 15px rgba(0,0,0,.5);
+	transform:translateX(-50%);
+}
+
+.profileEdit{
+	top: 10%;
+ position: relative;
+  width: 50%;
+  padding:20px;
+  left: 21%;
+}
+
+.profileEdit h2{
+  width: 100%;
+  color: #374C9F;
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+.profileEdit .rowF{
+  position: relative;
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(auto-fit,minmax(300px,1fr));
+
+}
+
+.profileEdit .rowF .colF{
+  position: relative;
+  width: 100%;
+  padding:0 10px;
+  margin: 30px 0 10px;
+  transition: 0.5s;
+}
+
+.profileEdit .rowF .inputBox{
+  position: relative;
+  width: 100%;
+  height: 30px;
+  color: #374C9F;
+}
+
+.profileEdit .rowF .inputBox input,
+.profileEdit .rowF .inputBox.textarea textarea{
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: transparent;
+  box-shadow: none;
+  border: none;
+  outline: none;
+  font-size: 18px;
+  padding:0 10px;
+  z-index: 1;
+  color: #1a1a1a;
+  transform:translateX(-50%);
+}
+
+.profileEdit .rowF .inputBox .textF{
+  position: absolute;
+  top: 0;
+  left: 0;
+  line-height: 30px;
+  font-size: 18px;
+  padding:0 10px;
+  display: block;
+  transition: 0.5s;
+  pointer-events: none;
+
+}
+
+.profileEdit .rowF .inputBox input:focus + .textF,
+.profileEdit .rowF .inputBox input:valid + .textF{
+  top: -35px;
+  left: -10px;
+
+}
+
+.profileEdit .rowF .inputBox .lineF{
+  position: absolute;
+  bottom: 0;
+  display: block;
+  width: 95%;
+  height: 2px;
+  background: #374C9F;
+  transition: 0.5s;
+  border-radius: 2px;
+  pointer-events: none;
+}
+
+.profileEdit .rowF .inputBox input:focus ~ .lineF,
+.profileEdit .rowF .inputBox input:valid ~ .lineF{
+  height: 100%;
+
+}
+
+
+.profileEdit input[type="submit"]{
+  border: none;
+  padding: 7px 35px;
+  cursor: pointer;
+  outline: none;
+  background: #374C9F;
+  color: #fff;
+  font-size: 18px;
+  border-radius: 2px;
+}
