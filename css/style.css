@@ -750,3 +750,86 @@ position: relative;
   margin: 10px;
   transition: 0.5s;
 }
+
+/*questions*/
+
+.Questions{
+  position: relative;
+  height:100vh;
+  width: 100%;
+  color:#000;
+  background: #EFEDE6;
+  text-align: center;
+}
+
+.Questions .rowF{
+  position: relative;
+  width: 100%;
+  height: 30%;
+  display: grid;
+  grid-template: repeat(auto-fit,minmax(300px,1fr));
+  margin-bottom: 20px;
+}
+
+.containerQL{
+	position: absolute;
+	left: 50%;
+	width: 70%;
+	height: 80%;
+	top: 10%;
+	transform: translateX(-50%);
+	
+}
+
+.containerQL h1{
+	
+	
+}
+
+.containerQ{
+	position: relative;
+	width: 100%;
+	height: 100%;
+	background: #fff;
+	box-shadow: 0 15px 15px rgba(0,0,0,.5);
+}
+
+.containerQ h3{
+	position: relative;
+	padding: 20px;
+	width: 100%;
+	text-align: left;
+	color: #374C9F;
+}
+
+.containerQ p{
+	position: relative;
+	text-align: left;
+	padding: 20px;
+	color: #000;
+}
+
+.containerQ .details{
+	position: absolute;
+	right: 5px;
+	bottom: 5px;
+	color: #333;
+}
+
+.containerQ .details span{
+	padding: 10px;
+}
+
+.containerQ .likeDislike{
+	position: absolute;
+	left: 5px;
+	bottom: 5px;
+	padding: 5px;
+}
+
+.containerQ .likeDislike i{
+		padding: 10px;
+		cursor: pointer;
+
+}
+
