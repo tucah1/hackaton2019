@@ -11,7 +11,7 @@ body, html{
     max-width: 100%;
     position: relative;
     overflow-x: hidden;
-    background: #EFEDE6;
+    background: #000;
     height: 100%;
 }
 a{
@@ -24,17 +24,23 @@ button:focus{
 
 /*body backgrounds*/
 .regBody{
-	background: linear-gradient(90deg, rgba(128,176,230,1) 16%, rgba(18,12,92,1) 62%, rgba(79,2,96,1) 100%);
+	background: url(../img/newBck.jpg);
+	background-position:center;
+  background-size:cover;
+  background-repeat:no-repeat;
 }
 .logBody{
-	background: linear-gradient(90deg, rgba(128,176,230,1) 16%, rgba(18,12,92,1) 62%, rgba(79,2,96,1) 100%);
+	background: url(../img/newBck.jpg);
+	background-position:center;
+  background-size:cover;
+  background-repeat:no-repeat;
 }
 
 
 /*opening page*/
 
 .heading{
-  background: url(./img/heading1.jpg);
+  background: url(../img/heading1.jpg);
   width: 100%;
   height: 100vh;
   overflow-x: hidden;
@@ -74,7 +80,7 @@ button:focus{
 .navigation .links{
     display: flex;
     justify-content: space-around;
-    width: 35%;
+    width: 20%;
 }
 
 .links a{
@@ -141,7 +147,7 @@ button:focus{
 
 .welcome .welcomeInner h1{
   font-family: 'Bebas Neue', cursive;
-  background: url(./img/2.jpg);
+  background: url(../img/2.jpg);
   text-transform: uppercase;
   font-size: 7em;
   font-weight: bold;
@@ -200,11 +206,28 @@ button:focus{
  .regForm{
  	position: relative;
  	width: 100%;
- 	height: 100vh;
+ 	height: 100%;
  	align-items: center;
  }
 
+ .containerR{
+ 	border-radius: 20px;
+	position: relative;
+	width: 60%;
+	height: 80%;
+	background: url("../img/formBck.jpg");
+	background-position:center;
+  	background-size:cover;
+  	background-repeat:no-repeat;
+	box-shadow: 0 8px 8px rgba(0,0,0,.5);
+	margin: auto;
+	margin-top: 5%;
+	margin-bottom: 5%;
+	text-align: center;
+}
+
  .register{
+ 	top: 10%;
  position: relative;
   width: 60%;
   padding:20px;
@@ -222,7 +245,8 @@ button:focus{
   position: relative;
   width: 100%;
   display: grid;
-  grid-template-columns: repeat(auto-fit,minmax(300px,1fr));
+  grid-template-columns: repeat(auto-fit,minmax(160px,1fr));
+  grid-column-gap: 5px;
 
 }
 
@@ -254,6 +278,8 @@ button:focus{
   padding:0 10px;
   z-index: 1;
   color: #1a1a1a;
+  transform: translateX(-50%);
+  margin-right: 5px;
 }
 
 .register .rowF .inputBox .textF{
@@ -336,6 +362,7 @@ button:focus{
 }
 
 .redirect{
+	top: 10%;
 	position: relative;
 	text-align: center;
 	width: 100%;
@@ -347,15 +374,17 @@ button:focus{
 
 /*alerts*/
 .alert {
-	z-index: 3;
-	width: 60%;
+    position: absolute;
+    z-index: 10;
+    width: 60%;
+    left: 50%;
+    transform: translateX(-50%);
     padding: 0.8rem;
     margin: 1rem 0;
-    opacity: 0.9;
-    background: #f4f4f4;
+
     color: #333;
-    margin: auto;
-    margin-top: 20px;
+
+    margin-top: 30px;
 }
 .alert-primary {
     background: #3e8152;;
@@ -727,7 +756,7 @@ width:60%;
   position: absolute;
   bottom: 0;
   display: block;
-  width: 95%;
+  width: 100%;
   height: 2px;
   background: #374C9F;
   transition: 0.5s;
@@ -1085,4 +1114,24 @@ width:60%;
 
 .insideContainerOQ .likeDislikeOQ i{
 	padding: 10px; 
+}
+
+/*muhammed addition*/
+.classTextarea {
+    position: relative;
+    border: 1px solid #374c9f;
+    border-radius: 5px;
+    width: 90%;
+    height: 12vh;
+    justify-content: center;
+    text-align: center;
+    font-size: 15px;
+    margin-left: 5%;
+    height: 120px;
+}
+
+#blue {
+    background: #51b6e9;
+    float: right;
+    margin-right: 50px;
 }
