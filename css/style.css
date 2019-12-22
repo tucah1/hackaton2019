@@ -724,12 +724,9 @@ width:60%;
   z-index: 1;
   color: #fff;
   transform:translateX(-50%);
+  padding-left: 20px;
 }
 
-.profileEdit .rowF .inputBox input
-{
-	padding: 0 20px; 
-}
 
 .profileEdit .rowF .inputBox .textF{
   position: absolute;
