@@ -1,0 +1,1128 @@
+@import url('https://fonts.googleapis.com/css?family=Poppins&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Bebas+Neue&display=swap');
+* {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+body,
+html {
+    font-family: 'Poppins', sans-serif;
+    box-sizing: border-box;
+    max-width: 100%;
+    position: relative;
+    overflow-x: hidden;
+    background: #efede6;
+    height: 100%;
+}
+a {
+    text-decoration: none;
+}
+
+/*body backgrounds*/
+.regBody {
+    background: linear-gradient(
+        90deg,
+        rgba(128, 176, 230, 1) 16%,
+        rgba(18, 12, 92, 1) 62%,
+        rgba(79, 2, 96, 1) 100%
+    );
+}
+.logBody {
+    background: linear-gradient(
+        90deg,
+        rgba(128, 176, 230, 1) 16%,
+        rgba(18, 12, 92, 1) 62%,
+        rgba(79, 2, 96, 1) 100%
+    );
+}
+
+/*opening page*/
+
+.heading {
+    background: url(./img/heading1.jpg);
+    width: 100%;
+    height: 100vh;
+    overflow-x: hidden;
+    overflow-y: hidden;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+/*Navigation*/
+.navigation {
+    position: relative;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    min-height: 8vh;
+    background-color: rgb(0, 0, 0, 1);
+}
+
+.navigation .logo {
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+}
+
+.navigation .logo img {
+    width: 5vh;
+    height: auto;
+}
+
+.navigation .logo h2 {
+    color: #999;
+    text-transform: uppercase;
+    margin-left: 5px;
+}
+.navigation .links {
+    display: flex;
+    justify-content: space-around;
+    width: 35%;
+}
+
+.links a {
+    text-decoration: none;
+    color: #777;
+}
+.links a:hover {
+    color: #fff;
+}
+
+.navigation ul li {
+    list-style: none;
+    font-weight: 900;
+}
+
+#loginBtn,
+#RegisterBtn {
+    font-weight: 900;
+    font-family: 'Poppins', sans-serif;
+    padding: 7px 12px;
+    cursor: pointer;
+    outline: none;
+    color: #777;
+    border-radius: 2px;
+}
+
+#loginBtn:hover {
+    color: #45f3ff;
+}
+
+#RegisterBtn:hover {
+    color: purple;
+}
+
+.menu {
+    display: none;
+    cursor: pointer;
+}
+
+.menu div {
+    width: 25px;
+    height: 3px;
+    background-color: #999;
+    margin: 5px;
+}
+
+/*welcome title text and buttons*/
+
+.welcome {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+}
+
+.welcomeInner {
+    display: block;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.welcome .welcomeInner h1 {
+    font-family: 'Bebas Neue', cursive;
+    background: url(./img/2.jpg);
+    text-transform: uppercase;
+    font-size: 7em;
+    font-weight: bold;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: moving 40s linear infinite;
+}
+
+.welcome .welcomeInner p {
+    display: block;
+    font-family: 'Bebas Neue', cursive;
+    color: #000;
+    padding: 10px;
+}
+
+@keyframes moving {
+    from {
+        background-position: 0 0;
+    }
+    50% {
+        background-position: 100% 100%;
+    }
+    to {
+        background-position: 0 0;
+    }
+}
+
+.form {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    margin: 0;
+}
+
+.btnLogin {
+    margin-right: 2%;
+    background: #88fefe;
+    padding: 7px 15px;
+    cursor: pointer;
+    outline: none;
+    color: #000;
+    font-size: 18px;
+    border-radius: 2px;
+}
+.btnRegister {
+    background: #fefe88;
+    padding: 7px 15px;
+    cursor: pointer;
+    outline: none;
+    color: #000;
+    font-size: 18px;
+    border-radius: 2px;
+}
+
+/*Register and login*/
+.regForm {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    align-items: center;
+}
+
+.register {
+    position: relative;
+    width: 60%;
+    padding: 20px;
+    left: 18%;
+}
+
+.register h2 {
+    width: 100%;
+    color: #45f3ff;
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.register .rowF {
+    position: relative;
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-column-gap: 10px;
+}
+
+.register .rowF .colF {
+    position: relative;
+    width: 100%;
+    padding: 0 10px;
+    margin: 30px 0 10px;
+    transition: 0.5s;
+}
+
+.register .rowF .inputBox {
+    position: relative;
+    width: 100%;
+    height: 40px;
+    color: #45f3ff;
+}
+
+.register .rowF .inputBox input,
+.register .rowF .inputBox.textarea textarea {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: transparent;
+    box-shadow: none;
+    border: none;
+    outline: none;
+    font-size: 18px;
+    padding: 0 10px;
+    z-index: 1;
+    color: #1a1a1a;
+}
+
+.register .rowF .inputBox .textF {
+    position: absolute;
+    top: 0;
+    left: 0;
+    line-height: 40px;
+    font-size: 18px;
+    padding: 0 10px;
+    display: block;
+    transition: 0.5s;
+    pointer-events: none;
+}
+
+.register .rowF .inputBox input:focus + .textF,
+.register .rowF .inputBox input:valid + .textF {
+    top: -35px;
+    left: -10px;
+}
+
+.register .rowF .inputBox .lineF {
+    position: absolute;
+    bottom: 0;
+    display: block;
+    width: 100%;
+    height: 2px;
+    background: #45f3ff;
+    transition: 0.5s;
+    border-radius: 2px;
+    pointer-events: none;
+}
+
+.register .rowF .inputBox input:focus ~ .lineF,
+.register .rowF .inputBox input:valid ~ .lineF {
+    height: 100%;
+}
+
+.register .rowF .inputBox.textarea {
+    position: relative;
+    bottom: 0;
+    width: 100%;
+    height: 100px;
+    padding: 10px 0;
+}
+
+.register .rowF .inputBox.textarea textarea {
+    height: 100%;
+    resize: none;
+}
+
+.register .rowF .inputBox textarea:focus + .textF,
+.register .rowF .inputBox textarea:valid + .textF {
+    top: -35px;
+    left: -10px;
+}
+.register .rowF .inputBox textarea:focus ~ .lineF,
+.register .rowF .inputBox textarea:valid ~ .lineF {
+    height: 100%;
+}
+.register input[type='submit'] {
+    border: none;
+    padding: 7px 35px;
+    cursor: pointer;
+    outline: none;
+    background: #45f3ff;
+    color: #1a1a1a;
+    font-size: 18px;
+    border-radius: 2px;
+}
+
+.btnCont {
+    width: 100%;
+    text-align: center;
+}
+
+.redirect {
+    position: relative;
+    text-align: center;
+    width: 100%;
+}
+
+.redirect a {
+    color: #45f3ff;
+}
+
+/*alerts*/
+.alert {
+    position: absolute;
+    z-index: 10;
+    width: 60%;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 0.8rem;
+    margin: 1rem 0;
+
+    color: #333;
+
+    margin-top: 30px;
+}
+.alert-primary {
+    background: #3e8152;
+    color: #fff;
+}
+.alert-light {
+    background: #f4f4f4;
+    color: #333;
+}
+.alert-dark {
+    background: #36383a;
+    color: #fff;
+}
+.alert-danger {
+    background: #941a26;
+    color: #fff;
+}
+.alert-success {
+    background: #28a745;
+    color: #fff;
+}
+.alert-white {
+    background: #fff;
+    color: #333;
+    border: #ccc solid 1px;
+}
+
+/*Profile */
+
+.profile {
+    position: relative;
+    height: 100%;
+    width: 100%;
+    color: #000;
+    background: #efede6;
+    text-align: center;
+}
+
+.container {
+    position: relative;
+    width: 60%;
+    height: 80%;
+    background: #fff;
+    box-shadow: 0 8px 8px rgba(0, 0, 0, 0.5);
+    margin: auto;
+    margin-top: 5%;
+    margin-bottom: 5%;
+    text-align: center;
+}
+
+.insideContainer {
+    position: relative;
+    max-width: 100%;
+    max-height: 100%;
+    padding: 10px;
+}
+
+.container img {
+    width: 200px;
+    height: auto;
+}
+
+.profileNav {
+    position: relative;
+    width: 100%;
+    height: 5vh;
+    text-align: right;
+    margin-top: 10px;
+}
+
+.profileNav a {
+    border: none;
+    padding: 5px 15px;
+    cursor: pointer;
+    outline: none;
+    background: #51b6e9;
+    color: #1a1a1a;
+    font-size: 15px;
+    border-radius: 2px;
+}
+.profileNav button {
+    margin-right: 10px;
+    text-decoration: none;
+    border: none;
+    padding: 7px 22px;
+    cursor: pointer;
+    outline: none;
+    background: #51b6e9;
+    color: #1a1a1a;
+    font-size: 15px;
+    border-radius: 2px;
+}
+
+.insideContainer .labels {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    color: #000;
+}
+
+#name {
+    font-size: 2em;
+    font-weight: 900;
+}
+
+.insideContainer hr {
+    width: 60%;
+    margin: auto;
+    background: #51b6e9;
+    margin-top: 30px;
+}
+
+.info {
+    width: 60%;
+    position: relative;
+    display: flex;
+    justify-content: space-around;
+    margin: auto;
+    margin-top: 30px;
+}
+
+.points {
+    margin-top: 80px;
+    width: 100%;
+    text-align: center;
+}
+
+.points span {
+    font-size: 2em;
+}
+
+.myQuestions {
+    width: 100%;
+    min-height: 40%;
+    height: auto;
+}
+
+.myAnswers {
+    width: 100%;
+    min-height: 40%;
+    height: auto;
+}
+
+.containerDown {
+    position: relative;
+    width: 60%;
+    min-height: 250px;
+    height: auto;
+    background: #fff;
+    box-shadow: 0 8px 8px rgba(0, 0, 0, 0.5);
+    margin: auto;
+    margin-top: 15px;
+    margin-bottom: 15px;
+    text-align: left;
+}
+
+.containerDown h3,
+p {
+    padding: 20px;
+}
+
+.containerDown p {
+    min-height: 80px;
+    height: auto;
+}
+.containerDown .details {
+    position: relative;
+    float: right;
+    margin-bottom: 5px;
+    margin-right: 20px;
+}
+
+.containerDown button {
+    border: none;
+    border-radius: 15px;
+    padding: 5px 20px;
+    cursor: pointer;
+    outline: none;
+    background: red;
+    color: #1a1a1a;
+    font-size: 18px;
+    border-radius: 2px;
+    margin: auto;
+    margin-left: 15px;
+}
+
+/*
+.containerA{
+	position: absolute;
+	width: 60%;
+	height: 40%;
+	left: 50%;
+	top: 10%;
+	transform: translateX(-50%);
+	background: #fff;
+	box-shadow: 0 15px 15px rgba(0,0,0,.5);
+	text-align: center;
+}
+
+
+.personal{
+	position: absolute;
+	width: 100%;
+	height: auto;
+	left: 50%;
+	transform:translateX(-50%);
+	top: 100px;
+	
+}
+
+.personal img{
+	margin-top: 10px;
+	width: 150px;
+	height: auto;
+}
+
+#name{
+	font-size: 2em;
+	font-weight: 900;
+}
+.personal .labels{
+	display: flex;
+  	justify-content: center;
+  	flex-direction: column;
+	width: 100%;
+	color: #000;
+}
+.personal .labels{
+	width: 100%;
+}
+.info{
+  position: absolute;
+  left: 50%;
+  top: 30%;
+  width: 500px;
+  height: 600px;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  color: #000;
+  transform:translateX(-50%);
+
+}
+
+.profileButtons{
+	margin-top: 20px;
+}
+
+.profileButtons a{
+	margin: 5px;
+  border: none;
+  padding: 5px 15px;
+  cursor: pointer;
+  outline: none;
+  background: #51B6E9;
+  color: #1a1a1a;
+  font-size: 15px;
+  border-radius: 2px;
+}
+.profileButtons button{
+	margin: 5px;
+  text-decoration: none;
+  border: none;
+  padding: 7px 22px;
+  cursor: pointer;
+  outline: none;
+  background: #51B6E9;
+  color: #1a1a1a;
+  font-size: 15px;
+  border-radius: 2px;
+}
+
+*/
+/*edit*/
+.containerE {
+    position: relative;
+    left: 50%;
+    width: 60%;
+    height: 90%;
+    top: 5%;
+    background: #fff;
+    box-shadow: 0 15px 15px rgba(0, 0, 0, 0.5);
+    transform: translateX(-50%);
+    margin-top: 60px;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+}
+
+.profileEdit {
+    top: 10%;
+    position: relative;
+    width: 50%;
+    padding: 20px;
+    left: 21%;
+}
+
+.profileEdit h2 {
+    width: 100%;
+    color: #374c9f;
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.profileEdit .rowF {
+    position: relative;
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+}
+
+.profileEdit .rowF .colF {
+    position: relative;
+    width: 100%;
+    padding: 0 10px;
+    margin: 30px 0 10px;
+    transition: 0.5s;
+}
+
+.profileEdit .rowF .inputBox {
+    position: relative;
+    width: 100%;
+    height: 30px;
+    color: #374c9f;
+}
+
+.profileEdit .rowF .inputBox input,
+.profileEdit .rowF .inputBox.textarea textarea {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: transparent;
+    box-shadow: none;
+    border: none;
+    outline: none;
+    font-size: 18px;
+    padding: 0 10px;
+    z-index: 1;
+    color: #fff;
+    transform: translateX(-50%);
+}
+
+.profileEdit .rowF .inputBox input {
+    padding: 0 20px;
+}
+
+.profileEdit .rowF .inputBox .textF {
+    position: absolute;
+    top: 0;
+    left: 0;
+    line-height: 30px;
+    font-size: 18px;
+    padding: 0 10px;
+    display: block;
+    transition: 0.5s;
+    pointer-events: none;
+}
+
+.profileEdit .rowF .inputBox input:focus + .textF,
+.profileEdit .rowF .inputBox input:valid + .textF {
+    padding: 0 20px;
+    top: -35px;
+    left: -10px;
+}
+
+.profileEdit .rowF .inputBox .lineF {
+    position: absolute;
+    bottom: 0;
+    display: block;
+    width: 95%;
+    height: 2px;
+    background: #374c9f;
+    transition: 0.5s;
+    border-radius: 2px;
+    pointer-events: none;
+}
+
+.profileEdit .rowF .inputBox input:focus ~ .lineF,
+.profileEdit .rowF .inputBox input:valid ~ .lineF {
+    padding: 0 20px;
+    height: 100%;
+}
+
+.profileEdit input[type='submit'] {
+    border: none;
+    padding: 7px 35px;
+    cursor: pointer;
+    outline: none;
+    background: #374c9f;
+    color: #fff;
+    font-size: 18px;
+    border-radius: 2px;
+}
+
+/*user list*/
+
+.profileL {
+    position: relative;
+    height: 100vh;
+    width: 100%;
+    color: #000;
+    background: #efede6;
+    text-align: center;
+    display: grid;
+}
+
+.search input {
+    margin-top: 50px;
+    margin-top: 5px;
+    border: none;
+    border-radius: 5px;
+    width: 50%;
+    height: 5vh;
+    justify-content: center;
+    text-align: center;
+    font-size: 15px;
+}
+.containerLX {
+    position: absolute;
+    left: 50%;
+    width: 60%;
+    height: 80%;
+    top: 10%;
+    transform: translateX(-50%);
+}
+
+.profileL .rowF {
+    position: relative;
+    width: 100%;
+    height: 25%;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    margin-bottom: 20px;
+}
+
+.containerL {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    background: #fff;
+    box-shadow: 0 8px 8px rgba(0, 0, 0, 0.5);
+}
+.containerL img {
+    position: absolute;
+    width: 100px;
+    height: auto;
+    left: 10%;
+    top: 30px;
+}
+
+.containerL .personal {
+    top: 30px;
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+.labels1 {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.containerL .personal label a {
+    color: #000;
+}
+
+.containerL .personal label a:hover {
+    color: #51b6e9;
+    cursor: pointer;
+}
+
+.containerL .personal label a:visited {
+    color: #000;
+}
+
+/*questions*/
+
+.Questions {
+    position: relative;
+    height: 100%;
+    width: 100%;
+    color: #000;
+    background: #efede6;
+    text-align: center;
+}
+
+.Questions .rowF {
+    position: relative;
+    width: 100%;
+    min-height: 30%;
+    height: auto;
+    display: grid;
+    grid-template: repeat(auto-fit, minmax(300px, 1fr));
+    margin-bottom: 20px;
+}
+
+.containerQL {
+    position: absolute;
+    left: 50%;
+    width: 70%;
+    height: 80%;
+    top: 10%;
+    transform: translateX(-50%);
+    margin-top: 50px;
+}
+
+.margin {
+    margin-bottom: 5%;
+}
+
+.containerQ {
+    position: relative;
+    width: 100%;
+    min-height: 30%;
+    background: #fff;
+    box-shadow: 0 10px 10px rgba(0, 0, 0, 0.5);
+}
+
+.containerQ h3 {
+    position: relative;
+    padding: 25px;
+    width: 100%;
+    text-align: left;
+    color: #374c9f;
+}
+
+.containerQ p {
+    position: relative;
+    text-align: left;
+    min-height: 80px;
+    height: auto;
+    padding: 25px;
+    color: #000;
+}
+
+.containerQ .details {
+    position: relative;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    color: #333;
+    padding-right: 10px;
+    padding-bottom: 10px;
+}
+
+.containerQ .details span {
+    padding: 15px;
+}
+
+.containerQ .details div {
+    display: flex;
+    min-width: 20%;
+}
+
+.containerQ .likeDislike {
+    position: relative;
+    text-align: left;
+    padding: 15px;
+}
+
+.containerQ .likeDislike i {
+    /*padding-left: 30px;*/
+    padding: 5px;
+    cursor: pointer;
+}
+
+/*question form*/
+
+.QuestionsF {
+    position: relative;
+    height: 100vh;
+    width: 100%;
+    color: #000;
+    background: #efede6;
+    text-align: center;
+}
+
+.containerQF {
+    position: absolute;
+    width: 60%;
+    height: 70%;
+    left: 50%;
+    top: 10%;
+    transform: translateX(-50%);
+    background: #fff;
+    box-shadow: 0 15px 15px rgba(0, 0, 0, 0.5);
+    text-align: center;
+}
+
+.containerQFL {
+    position: absolute;
+    left: 50%;
+    width: 70%;
+    height: 80%;
+    top: 10%;
+    transform: translateX(-50%);
+}
+
+.newPostForm {
+    width: 50%;
+    position: absolute;
+    left: 49%;
+    transform: translateX(-50%);
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.newPostForm div {
+    margin: 20px;
+    width: 100%;
+}
+
+.newPostForm div label {
+    margin-right: 10px;
+}
+
+.newPostForm div input {
+    border: 1px solid #374c9f;
+    border-radius: 5px;
+    width: 100%;
+    height: 5vh;
+    justify-content: center;
+    text-align: center;
+    font-size: 15px;
+}
+
+.newPostForm div textarea {
+    border: 1px solid #374c9f;
+    border-radius: 5px;
+    width: 100%;
+    height: 12vh;
+    justify-content: center;
+    text-align: center;
+    font-size: 15px;
+}
+
+.newPostForm input[type='submit'] {
+    position: relative;
+    left: 53%;
+    transform: translateX(-50%);
+    border: none;
+    width: 50%;
+    padding: 7px 35px;
+    cursor: pointer;
+    outline: none;
+    background: #374c9f;
+    color: #fff;
+    font-size: 18px;
+    border-radius: 2px;
+}
+
+.all {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    text-align: center;
+    margin-top: 50px;
+}
+
+/*open question*/
+
+.containerOQ {
+    position: relative;
+    width: 60%;
+    height: auto;
+    min-height: 300px;
+    background: #fff;
+    box-shadow: 0 8px 8px rgba(0, 0, 0, 0.5);
+    margin: auto;
+    margin-top: 5%;
+    margin-bottom: 5%;
+    text-align: center;
+}
+
+.insideContainerOQ {
+    position: relative;
+    text-align: left;
+    max-width: 100%;
+    max-height: 100%;
+    padding: 20px;
+}
+
+.insideContainerOQ p {
+    min-height: 150px;
+    height: auto;
+}
+
+.insideContainerOQ .detailsOQ {
+    position: relative;
+    width: 100%;
+    text-align: right;
+}
+
+.insideContainerOQ .detailsOQ button {
+    border: none;
+    border-radius: 15px;
+    padding: 5px 20px;
+    cursor: pointer;
+    outline: none;
+    background: red;
+    color: #1a1a1a;
+    font-size: 18px;
+    border-radius: 2px;
+    margin: auto;
+    margin-left: 15px;
+}
+
+.insideContainerOQ .likeDislikeOQ {
+    width: 100%;
+    text-align: left;
+}
+
+.insideContainerOQ .likeDislikeOQ i {
+    padding: 10px;
+}
+
+button:focus {
+    outline: 0;
+}
+
+.classTextarea {
+    position: relative;
+    border: 1px solid #374c9f;
+    border-radius: 5px;
+    width: 90%;
+    height: 12vh;
+    justify-content: center;
+    text-align: center;
+    font-size: 15px;
+    margin-left: 5%;
+    height: 120px;
+}
+
+#blue {
+    background: #51b6e9;
+    float: right;
+    margin-right: 50px;
+    border: none;
+    border-radius: 15px;
+    padding: 5px 20px;
+    cursor: pointer;
+    outline: none;
+
+    color: #1a1a1a;
+    font-size: 18px;
+    border-radius: 2px;
+}
+
+#maybe1 {
+    padding-left: 40px;
+}
+
+#maybe2 {
+    padding-left: 40px;
+}
+
+#maybe3 {
+    padding-left: 40px;
+}
+
+#maybe4 {
+    padding-left: 40px;
+}
+
+#maybe5 {
+    padding-left: 40px;
+}
