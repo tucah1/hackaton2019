@@ -2,11 +2,23 @@ import React, { Fragment, useEffect } from 'react';
 import Search from '../layout/SearchUser';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
-import { getPosts } from '../../actions/post';
+import {
+    getPosts,
+    addLikeQuestion,
+    removeLikeQuestion
+} from '../../actions/post';
 import Spinner from '../layout/Spinner';
 import Moment from 'react-moment';
+import { Link } from 'react-router-dom';
 
-const Questions = ({ getPosts, post: { posts, loading }, search }) => {
+const Questions = ({
+    getPosts,
+    addLikeQuestion,
+    removeLikeQuestion,
+    post: { posts, loading },
+    search,
+    profile
+}) => {
     useEffect(() => {
         getPosts(search.user);
     }, [getPosts, search.user]);
@@ -14,8 +26,8 @@ const Questions = ({ getPosts, post: { posts, loading }, search }) => {
         <Spinner />
     ) : (
         <Fragment>
-            <div class="Questions">
-                <div class="containerQL">
+            <div className="Questions">
+                <div className="containerQL">
                     <h1>Posts & Questions</h1>
                     <br />
                     <Search
@@ -24,19 +36,60 @@ const Questions = ({ getPosts, post: { posts, loading }, search }) => {
                     <br />
                     <br />
                     {posts.map(post => (
-                        <div class="rowF">
-                            <div class="containerQ">
-                                <h3>{post.title}</h3>
+                        <div className="rowF">
+                            <div className="containerQ">
+                                <Link to={`/questions/${post._id}`}>
+                                    <h3>{post.title}</h3>
+                                </Link>
+
                                 <p>{post.text}</p>
-                                <div class="details">
-                                    <span>{post.name}</span>
-                                    <Moment format="DD.MM.YYYY  HH:mm">
-                                        {post.date}
-                                    </Moment>
+                                <div className="likeDislike">
+                                    <button
+                                        onClick={() =>
+                                            addLikeQuestion(post._id)
+                                        }
+                                        type="button"
+                                        style={{
+                                            background: 'white',
+                                            marginLeft: '10px',
+                                            border: 'none'
+                                        }}
+                                    >
+                                        <i className="fas fa-thumbs-up" />{' '}
+                                        <span>
+                                            {post.likes.length > 0 && (
+                                                <span>{post.likes.length}</span>
+                                            )}
+                                        </span>
+                                    </button>
+                                    <button
+                                        onClick={() =>
+                                            removeLikeQuestion(post._id)
+                                        }
+                                        type="button"
+                                        style={{
+                                            background: 'white',
+                                            marginLeft: '10px',
+                                            border: 'none'
+                                        }}
+                                    >
+                                        <i className="fas fa-thumbs-down" />
+                                    </button>
                                 </div>
-                                <div class="likeDislike">
-                                    <i class="fas fa-thumbs-up"></i>
-                                    <i class="fas fa-thumbs-down"></i>
+                                <div className="details">
+                                    <div className="one">
+                                        {post.tags.map(tag => (
+                                            <span key={tag._id}>{tag.tag}</span>
+                                        ))}
+                                    </div>
+                                    <div className="two">
+                                        <span>{post.name}</span>
+                                        <span>
+                                            <Moment format="DD.MM.YYYY  HH:mm">
+                                                {post.date}
+                                            </Moment>
+                                        </span>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -50,12 +103,20 @@ const Questions = ({ getPosts, post: { posts, loading }, search }) => {
 Questions.propTypes = {
     getPosts: PropTypes.func.isRequired,
     post: PropTypes.object.isRequired,
-    search: PropTypes.object.isRequired
+    search: PropTypes.object.isRequired,
+    addLikeQuestion: PropTypes.func.isRequired,
+    removeLikeQuestion: PropTypes.func.isRequired,
+    profile: PropTypes.object.isRequired
 };
 
 const mapStateToProps = state => ({
     post: state.post,
-    search: state.search
+    search: state.search,
+    profile: state.profile
 });
 
-export default connect(mapStateToProps, { getPosts })(Questions);
+export default connect(mapStateToProps, {
+    getPosts,
+    addLikeQuestion,
+    removeLikeQuestion
+})(Questions);

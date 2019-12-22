@@ -1,20 +1,25 @@
 import React, { Fragment } from 'react';
+import { connect } from 'react-redux';
+import { Link, Redirect } from 'react-router-dom';
 
-import { Link } from 'react-router-dom';
-
-const Landing = props => {
+const Landing = ({ auth }) => {
+    if (auth.isAuthenticated) {
+        return <Redirect to="/questions" />;
+    }
     return (
         <Fragment>
             <div className="heading">
-                <div class="welcome">
-                    <div class="welcomeInner">
+                <div className="welcome">
+                    <div className="welcomeInner">
                         <h1>InfoQueue</h1>
-                        <p>Join our comunity and find new oppurtunities.</p>
-                        <div class="form">
-                            <Link class="btnLogin" to="/login">
+                        <h3 style={{ marginBottom: '30px' }}>
+                            Join our comunity and find new oppurtunities
+                        </h3>
+                        <div className="form">
+                            <Link className="btnLogin" to="/login">
                                 Log In
                             </Link>
-                            <Link class="btnRegister" to="/register">
+                            <Link className="btnRegister" to="/register">
                                 Register
                             </Link>
                         </div>
@@ -25,4 +30,8 @@ const Landing = props => {
     );
 };
 
-export default Landing;
+const mapSateToProps = state => ({
+    auth: state.auth
+});
+
+export default connect(mapSateToProps, {})(Landing);

@@ -3,6 +3,7 @@ import { Link, withRouter } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { editProfile, getCurrentProfile } from '../../actions/profile';
+import Spinner from '../layout/Spinner';
 
 const EditProfile = ({
     profile: { profile, loading },
@@ -42,89 +43,111 @@ const EditProfile = ({
 
     return (
         <Fragment>
-            <div class="profile">
-                <div class="containerE">
-                    <form class="profileEdit" onSubmit={e => onSubmit(e)}>
-                        <h2>Edit profile</h2>
-                        <div class="rowF">
-                            <div class="colF">
-                                <div class="inputBox">
-                                    <input
-                                        type="text"
-                                        name="name"
-                                        value={name}
-                                        required="required"
-                                        onChange={e => onChange(e)}
-                                    />
-                                    <span class="textF">Name</span>
-                                    <span class="lineF"></span>
+            {loading || profile.name === null || profile === undefined ? (
+                <Spinner />
+            ) : (
+                <Fragment>
+                    <div className="profile">
+                        <div className="containerE">
+                            <form
+                                className="profileEdit"
+                                onSubmit={e => onSubmit(e)}
+                            >
+                                <h2>Edit profile</h2>
+                                <div className="rowF">
+                                    <div className="colF">
+                                        <div className="inputBox">
+                                            <input
+                                                id="maybe1"
+                                                type="text"
+                                                name="name"
+                                                value={name}
+                                                required="required"
+                                                onChange={e => onChange(e)}
+                                            />
+                                            <span className="textF">Name</span>
+                                            <span className="lineF"></span>
+                                        </div>
+                                    </div>
+                                    <div className="colF">
+                                        <div className="inputBox">
+                                            <input
+                                                id="maybe2"
+                                                type="text"
+                                                name="username"
+                                                value={username}
+                                                required="required"
+                                                onChange={e => onChange(e)}
+                                            />
+                                            <span className="textF">
+                                                Username
+                                            </span>
+                                            <span className="lineF"></span>
+                                        </div>
+                                    </div>
                                 </div>
-                            </div>
-                            <div class="colF">
-                                <div class="inputBox">
-                                    <input
-                                        type="text"
-                                        name="username"
-                                        value={username}
-                                        required="required"
-                                        onChange={e => onChange(e)}
-                                    />
-                                    <span class="textF">Username</span>
-                                    <span class="lineF"></span>
+                                <div className="rowF">
+                                    <div className="colF">
+                                        <div className="inputBox">
+                                            <input
+                                                id="maybe3"
+                                                type="text"
+                                                name="university"
+                                                value={university}
+                                                required="required"
+                                                onChange={e => onChange(e)}
+                                            />
+                                            <span className="textF">
+                                                University
+                                            </span>
+                                            <span className="lineF"></span>
+                                        </div>
+                                    </div>
                                 </div>
-                            </div>
+                                <div className="rowF">
+                                    <div className="colF">
+                                        <div className="inputBox">
+                                            <input
+                                                id="maybe4"
+                                                type="text"
+                                                name="faculty"
+                                                value={faculty}
+                                                required="required"
+                                                onChange={e => onChange(e)}
+                                            />
+                                            <span className="textF">
+                                                Faculty
+                                            </span>
+                                            <span className="lineF"></span>
+                                        </div>
+                                    </div>
+                                    <div className="colF">
+                                        <div className="inputBox">
+                                            <input
+                                                id="maybe5"
+                                                type="text"
+                                                name="department"
+                                                value={department}
+                                                required="required"
+                                                onChange={e => onChange(e)}
+                                            />
+                                            <span className="textF">
+                                                Department
+                                            </span>
+                                            <span className="lineF"></span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <input
+                                    type="submit"
+                                    name="edit"
+                                    value="Submit changes"
+                                />
+                            </form>
                         </div>
-                        <div class="rowF">
-                            <div class="colF">
-                                <div class="inputBox">
-                                    <input
-                                        type="text"
-                                        name="university"
-                                        value={university}
-                                        required="required"
-                                        onChange={e => onChange(e)}
-                                    />
-                                    <span class="textF">University</span>
-                                    <span class="lineF"></span>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="rowF">
-                            <div class="colF">
-                                <div class="inputBox">
-                                    <input
-                                        type="text"
-                                        name="faculty"
-                                        value={faculty}
-                                        required="required"
-                                        onChange={e => onChange(e)}
-                                    />
-                                    <span class="textF">Faculty</span>
-                                    <span class="lineF"></span>
-                                </div>
-                            </div>
-                            <div class="colF">
-                                <div class="inputBox">
-                                    <input
-                                        type="text"
-                                        name="department"
-                                        value={department}
-                                        required="required"
-                                        onChange={e => onChange(e)}
-                                    />
-                                    <span class="textF">Department</span>
-                                    <span class="lineF"></span>
-                                </div>
-                            </div>
-                        </div>
-                        <input
-                            type="submit"
-                            name="edit"
-                            value="Submit changes"
-                        />
-                    </form>
-                </div>
-            </div>
+                    </div>
+                </Fragment>
+            )}
         </Fragment>
     );
 };

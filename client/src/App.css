@@ -13,6 +13,7 @@ html {
     position: relative;
     overflow-x: hidden;
     background: #efede6;
+    height: 100%;
 }
 a {
     text-decoration: none;
@@ -226,6 +227,7 @@ a {
     width: 100%;
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-column-gap: 10px;
 }
 
 .register .rowF .colF {
@@ -280,7 +282,7 @@ a {
     position: absolute;
     bottom: 0;
     display: block;
-    width: 95%;
+    width: 100%;
     height: 2px;
     background: #45f3ff;
     transition: 0.5s;
@@ -343,11 +345,17 @@ a {
 
 /*alerts*/
 .alert {
+    position: absolute;
+    z-index: 10;
+    width: 60%;
+    left: 50%;
+    transform: translateX(-50%);
     padding: 0.8rem;
     margin: 1rem 0;
-    opacity: 0.9;
-    background: #f4f4f4;
+
     color: #333;
+
+    margin-top: 30px;
 }
 .alert-primary {
     background: #3e8152;
@@ -379,24 +387,22 @@ a {
 
 .profile {
     position: relative;
-    height: 100vh;
+    height: 100%;
     width: 100%;
     color: #000;
     background: #efede6;
     text-align: center;
-    overflow-y: hidden;
 }
 
 .container {
-    position: absolute;
-    left: 50%;
+    position: relative;
     width: 60%;
     height: 80%;
     background: #fff;
-    box-shadow: 0 15px 15px rgba(0, 0, 0, 0.5);
-    transform: translateX(-50%);
-    top: 10%;
+    box-shadow: 0 8px 8px rgba(0, 0, 0, 0.5);
     margin: auto;
+    margin-top: 5%;
+    margin-bottom: 5%;
     text-align: center;
 }
 
@@ -417,6 +423,7 @@ a {
     width: 100%;
     height: 5vh;
     text-align: right;
+    margin-top: 10px;
 }
 
 .profileNav a {
@@ -430,6 +437,7 @@ a {
     border-radius: 2px;
 }
 .profileNav button {
+    margin-right: 10px;
     text-decoration: none;
     border: none;
     padding: 7px 22px;
@@ -454,7 +462,84 @@ a {
 }
 
 .insideContainer hr {
-    items-align: left;
+    width: 60%;
+    margin: auto;
+    background: #51b6e9;
+    margin-top: 30px;
+}
+
+.info {
+    width: 60%;
+    position: relative;
+    display: flex;
+    justify-content: space-around;
+    margin: auto;
+    margin-top: 30px;
+}
+
+.points {
+    margin-top: 80px;
+    width: 100%;
+    text-align: center;
+}
+
+.points span {
+    font-size: 2em;
+}
+
+.myQuestions {
+    width: 100%;
+    min-height: 40%;
+    height: auto;
+}
+
+.myAnswers {
+    width: 100%;
+    min-height: 40%;
+    height: auto;
+}
+
+.containerDown {
+    position: relative;
+    width: 60%;
+    min-height: 250px;
+    height: auto;
+    background: #fff;
+    box-shadow: 0 8px 8px rgba(0, 0, 0, 0.5);
+    margin: auto;
+    margin-top: 15px;
+    margin-bottom: 15px;
+    text-align: left;
+}
+
+.containerDown h3,
+p {
+    padding: 20px;
+}
+
+.containerDown p {
+    min-height: 80px;
+    height: auto;
+}
+.containerDown .details {
+    position: relative;
+    float: right;
+    margin-bottom: 5px;
+    margin-right: 20px;
+}
+
+.containerDown button {
+    border: none;
+    border-radius: 15px;
+    padding: 5px 20px;
+    cursor: pointer;
+    outline: none;
+    background: red;
+    color: #1a1a1a;
+    font-size: 18px;
+    border-radius: 2px;
+    margin: auto;
+    margin-left: 15px;
 }
 
 /*
@@ -554,6 +639,10 @@ a {
     background: #fff;
     box-shadow: 0 15px 15px rgba(0, 0, 0, 0.5);
     transform: translateX(-50%);
+    margin-top: 60px;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
 }
 
 .profileEdit {
@@ -707,7 +796,7 @@ a {
     width: 100%;
     height: 100%;
     background: #fff;
-    box-shadow: 0 15px 15px rgba(0, 0, 0, 0.5);
+    box-shadow: 0 8px 8px rgba(0, 0, 0, 0.5);
 }
 .containerL img {
     position: absolute;
@@ -724,16 +813,30 @@ a {
     height: 100%;
 }
 
+.labels1 {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.containerL .personal label a {
+    color: #000;
+}
+
 .containerL .personal label a:hover {
     color: #51b6e9;
     cursor: pointer;
+}
+
+.containerL .personal label a:visited {
+    color: #000;
 }
 
 /*questions*/
 
 .Questions {
     position: relative;
-    height: 100vh;
+    height: 100%;
     width: 100%;
     color: #000;
     background: #efede6;
@@ -743,7 +846,8 @@ a {
 .Questions .rowF {
     position: relative;
     width: 100%;
-    height: 30%;
+    min-height: 30%;
+    height: auto;
     display: grid;
     grid-template: repeat(auto-fit, minmax(300px, 1fr));
     margin-bottom: 20px;
@@ -756,9 +860,7 @@ a {
     height: 80%;
     top: 10%;
     transform: translateX(-50%);
-}
-
-.containerQL h1 {
+    margin-top: 50px;
 }
 
 .margin {
@@ -768,7 +870,7 @@ a {
 .containerQ {
     position: relative;
     width: 100%;
-    height: 100%;
+    min-height: 30%;
     background: #fff;
     box-shadow: 0 10px 10px rgba(0, 0, 0, 0.5);
 }
@@ -784,30 +886,39 @@ a {
 .containerQ p {
     position: relative;
     text-align: left;
+    min-height: 80px;
+    height: auto;
     padding: 25px;
     color: #000;
 }
 
 .containerQ .details {
-    position: absolute;
-    right: 5px;
-    bottom: 5px;
+    position: relative;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
     color: #333;
-    padding: 10px;
+    padding-right: 10px;
+    padding-bottom: 10px;
 }
 
 .containerQ .details span {
     padding: 15px;
 }
 
+.containerQ .details div {
+    display: flex;
+    min-width: 20%;
+}
+
 .containerQ .likeDislike {
-    position: absolute;
-    left: 5px;
-    bottom: 5px;
+    position: relative;
+    text-align: left;
     padding: 15px;
 }
 
 .containerQ .likeDislike i {
+    /*padding-left: 30px;*/
     padding: 5px;
     cursor: pointer;
 }
@@ -905,4 +1016,113 @@ a {
     height: 100vh;
     text-align: center;
     margin-top: 50px;
+}
+
+/*open question*/
+
+.containerOQ {
+    position: relative;
+    width: 60%;
+    height: auto;
+    min-height: 300px;
+    background: #fff;
+    box-shadow: 0 8px 8px rgba(0, 0, 0, 0.5);
+    margin: auto;
+    margin-top: 5%;
+    margin-bottom: 5%;
+    text-align: center;
+}
+
+.insideContainerOQ {
+    position: relative;
+    text-align: left;
+    max-width: 100%;
+    max-height: 100%;
+    padding: 20px;
+}
+
+.insideContainerOQ p {
+    min-height: 150px;
+    height: auto;
+}
+
+.insideContainerOQ .detailsOQ {
+    position: relative;
+    width: 100%;
+    text-align: right;
+}
+
+.insideContainerOQ .detailsOQ button {
+    border: none;
+    border-radius: 15px;
+    padding: 5px 20px;
+    cursor: pointer;
+    outline: none;
+    background: red;
+    color: #1a1a1a;
+    font-size: 18px;
+    border-radius: 2px;
+    margin: auto;
+    margin-left: 15px;
+}
+
+.insideContainerOQ .likeDislikeOQ {
+    width: 100%;
+    text-align: left;
+}
+
+.insideContainerOQ .likeDislikeOQ i {
+    padding: 10px;
+}
+
+button:focus {
+    outline: 0;
+}
+
+.classTextarea {
+    position: relative;
+    border: 1px solid #374c9f;
+    border-radius: 5px;
+    width: 90%;
+    height: 12vh;
+    justify-content: center;
+    text-align: center;
+    font-size: 15px;
+    margin-left: 5%;
+    height: 120px;
+}
+
+#blue {
+    background: #51b6e9;
+    float: right;
+    margin-right: 50px;
+    border: none;
+    border-radius: 15px;
+    padding: 5px 20px;
+    cursor: pointer;
+    outline: none;
+
+    color: #1a1a1a;
+    font-size: 18px;
+    border-radius: 2px;
+}
+
+#maybe1 {
+    padding-left: 40px;
+}
+
+#maybe2 {
+    padding-left: 40px;
+}
+
+#maybe3 {
+    padding-left: 40px;
+}
+
+#maybe4 {
+    padding-left: 40px;
+}
+
+#maybe5 {
+    padding-left: 40px;
 }

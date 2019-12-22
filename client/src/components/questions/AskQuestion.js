@@ -15,11 +15,11 @@ const AskQuestion = ({ addPost }) => {
         setFormData({ ...formData, [e.target.name]: e.target.value });
 
     return (
-        <div class="QuestionsF">
-            <div class="containerQF">
+        <div className="QuestionsF">
+            <div className="containerQF">
                 <h1>New Post</h1>
                 <form
-                    class="newPostForm"
+                    className="newPostForm"
                     onSubmit={e => {
                         e.preventDefault();
                         addPost({ formData });
@@ -30,7 +30,7 @@ const AskQuestion = ({ addPost }) => {
                         });
                     }}
                 >
-                    <div class="postTitle">
+                    <div className="postTitle">
                         <label>Title:</label>
                         <input
                             type="text"
@@ -40,7 +40,7 @@ const AskQuestion = ({ addPost }) => {
                             onChange={e => onChange(e)}
                         />
                     </div>
-                    <div class="postTitle">
+                    <div className="postTitle">
                         <label>Tags:</label>
                         <input
                             type="text"
@@ -50,7 +50,7 @@ const AskQuestion = ({ addPost }) => {
                             onChange={e => onChange(e)}
                         />
                     </div>
-                    <div class="postQuestion">
+                    <div className="postQuestion">
                         <label>Question:</label>
                         <textarea
                             required

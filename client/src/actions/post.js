@@ -9,15 +9,17 @@ import {
     GET_POST,
     ADD_COMMENT,
     REMOVE_COMMENT,
-    UPDATE_COMMENT_LIKES
+    UPDATE_COMMENT_LIKES,
+    USER_LOADED,
+    QUESTIONS_ANSWERS
 } from './types';
 
 // Get posts
 export const getPosts = text => async dispatch => {
-    console.log(text);
-
     if (text === null || text === '' || text === ' ' || text === undefined) {
         text = '-1';
+    } else {
+        text = text.trim().replace(/\s/g, '_');
     }
     try {
         const config = {
@@ -30,6 +32,29 @@ export const getPosts = text => async dispatch => {
 
         dispatch({
             type: GET_POSTS,
+            payload: res.data
+        });
+    } catch (err) {
+        dispatch({
+            type: POST_ERROR,
+            payload: {
+                msg: err.response.statusText,
+                status: err.response.status
+            }
+        });
+    }
+};
+
+// Get questions and answers
+export const getQandA = (id, post) => async dispatch => {
+    try {
+        const config = {
+            headers: { 'x-auth-token': localStorage.getItem('token') }
+        };
+        const res = await axios.get(`/api/questions/search-qa/${id}`, config);
+
+        dispatch({
+            type: QUESTIONS_ANSWERS,
             payload: res.data
         });
     } catch (err) {
@@ -79,14 +104,54 @@ export const addPost = formData => async dispatch => {
 };
 
 // Get post
-export const getPost = id => async dispatch => {
-    try {
-        const res = await axios.get(`/api/questions/${id}`);
+export const getPost = (id, post) => async dispatch => {
+    const config = {
+        headers: {
+            'x-auth-token': localStorage.getItem('token')
+        }
+    };
 
+    try {
+        const res = await axios.get(`/api/questions/${id}`, config);
+        const res2 = await axios.get('/api/profile/me', config);
         dispatch({
             type: GET_POST,
             payload: res.data
         });
+
+        dispatch({
+            type: USER_LOADED,
+            payload: res2.data
+        });
+    } catch (err) {
+        dispatch({
+            type: POST_ERROR,
+            payload: {
+                msg: err.response.statusText,
+                status: err.response.status
+            }
+        });
+    }
+};
+// Delete post
+export const deletePost = (id, history) => async dispatch => {
+    const config = {
+        headers: {
+            'x-auth-token': localStorage.getItem('token')
+        }
+    };
+    try {
+        console.log('test');
+
+        await axios.delete(`/api/questions/${id}`, config);
+
+        dispatch({
+            type: DELETE_POST,
+            payload: id
+        });
+
+        dispatch(setAlert('Post Removed', 'success'));
+        history.push('/questions');
     } catch (err) {
         dispatch({
             type: POST_ERROR,
@@ -100,9 +165,13 @@ export const getPost = id => async dispatch => {
 
 // Add comment
 export const addComment = (postId, formData) => async dispatch => {
+    console.log(formData);
+    console.log(postId);
+
     const config = {
         headers: {
-            'Content-Type': 'application/json'
+            'Content-Type': 'application/json',
+            'x-auth-token': localStorage.getItem('token')
         }
     };
 
@@ -132,9 +201,21 @@ export const addComment = (postId, formData) => async dispatch => {
 
 // Delete comment
 export const deleteComment = (postId, commentId) => async dispatch => {
+    console.log(postId);
+    console.log(commentId);
+    const config = {
+        headers: {
+            'Content-Type': 'application/json',
+            'x-auth-token': localStorage.getItem('token')
+        }
+    };
     try {
-        await axios.delete(`/api/questions/answers/${postId}/${commentId}`);
-
+        await axios.delete(
+            `/api/questions/answers/${postId}/${commentId}`,
+            config
+        );
+        console.log(postId);
+        console.log(commentId);
         dispatch({
             type: REMOVE_COMMENT,
             payload: commentId
@@ -145,8 +226,7 @@ export const deleteComment = (postId, commentId) => async dispatch => {
         dispatch({
             type: POST_ERROR,
             payload: {
-                msg: err.response.statusText,
-                status: err.response.status
+                msg: err.message
             }
         });
     }
@@ -154,8 +234,15 @@ export const deleteComment = (postId, commentId) => async dispatch => {
 
 // Add like
 export const addLikeQuestion = id => async dispatch => {
+    const config = {
+        headers: {
+            'Content-Type': 'application/json',
+            'x-auth-token': localStorage.getItem('token')
+        }
+    };
+
     try {
-        const res = await axios.put(`/api/questions/like/${id}`);
+        const res = await axios.put(`/api/questions/like/${id}`, config);
 
         dispatch({
             type: UPDATE_LIKES,
@@ -174,8 +261,14 @@ export const addLikeQuestion = id => async dispatch => {
 
 // Remove like
 export const removeLikeQuestion = id => async dispatch => {
+    const config = {
+        headers: {
+            'Content-Type': 'application/json',
+            'x-auth-token': localStorage.getItem('token')
+        }
+    };
     try {
-        const res = await axios.put(`/api/questions/unlike/${id}`);
+        const res = await axios.put(`/api/questions/unlike/${id}`, config);
 
         dispatch({
             type: UPDATE_LIKES,
@@ -194,9 +287,16 @@ export const removeLikeQuestion = id => async dispatch => {
 
 // Add like
 export const addLikeAnswer = (idQ, idA) => async dispatch => {
+    const config = {
+        headers: {
+            'Content-Type': 'application/json',
+            'x-auth-token': localStorage.getItem('token')
+        }
+    };
     try {
         const res = await axios.put(
-            `/api/questions/answers/like/${idQ}/${idA}`
+            `/api/questions/answers/like/${idQ}/${idA}`,
+            config
         );
 
         dispatch({
@@ -216,9 +316,16 @@ export const addLikeAnswer = (idQ, idA) => async dispatch => {
 
 // Remove like
 export const removeLikeAnswer = (idQ, idA) => async dispatch => {
+    const config = {
+        headers: {
+            'Content-Type': 'application/json',
+            'x-auth-token': localStorage.getItem('token')
+        }
+    };
     try {
         const res = await axios.put(
-            `/api/questions/answers/unlike/${idQ}/${idA}`
+            `/api/questions/answers/unlike/${idQ}/${idA}`,
+            config
         );
 
         dispatch({

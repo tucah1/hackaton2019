@@ -118,7 +118,7 @@ export const editProfile = formData => async dispatch => {
 };
 
 // Delete account and profile
-export const deleteAccount = () => async dispatch => {
+export const deleteAccount = history => async dispatch => {
     if (window.confirm('Are you sure? This can NOT be undone!')) {
         try {
             await axios.delete('/api/profile');
@@ -130,7 +130,7 @@ export const deleteAccount = () => async dispatch => {
                 type: ACCOUNT_DELETED
             });
 
-            dispatch(setAlert('Your account has been permanantly deleted'));
+            history.push('/questions');
         } catch (err) {
             dispatch({
                 type: PROFILE_ERROR,

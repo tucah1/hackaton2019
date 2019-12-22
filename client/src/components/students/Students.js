@@ -17,18 +17,20 @@ const Students = ({ search, getProfiles, profile: { profiles, loading } }) => {
             ) : (
                 <Fragment>
                     <div className="all">
+                        <h1>Connect with others</h1>
+                        <br />
                         <Search
                             text2={'Search for student...'}
                             className="all-search"
                         />
-                        <div class="profileL">
-                            <div class="containerLX">
+                        <div className="profileL">
+                            <div className="containerLX">
                                 {profiles.map(prof => (
-                                    <div class="rowF">
-                                        <div class="containerL">
+                                    <div className="rowF">
+                                        <div className="containerL">
                                             <img src={prof.avatar} />
-                                            <div class="personal">
-                                                <div class="labels">
+                                            <div className="personal">
+                                                <div className="labels">
                                                     <label id="name">
                                                         <Link
                                                             to={`/profile/${prof._id}`}
@@ -36,9 +38,12 @@ const Students = ({ search, getProfiles, profile: { profiles, loading } }) => {
                                                             {prof.name}
                                                         </Link>
                                                     </label>
+                                                    <br />
                                                     <label id="usern">
-                                                        <Link>
-                                                            {prof.username}
+                                                        <Link
+                                                            to={`/profile/${prof._id}`}
+                                                        >
+                                                            @{prof.username}
                                                         </Link>
                                                     </label>
                                                 </div>

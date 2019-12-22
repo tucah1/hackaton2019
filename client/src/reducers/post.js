@@ -7,14 +7,16 @@ import {
     GET_POST,
     ADD_COMMENT,
     REMOVE_COMMENT,
-    UPDATE_COMMENT_LIKES
+    UPDATE_COMMENT_LIKES,
+    QUESTIONS_ANSWERS
 } from '../actions/types';
 
 const initialState = {
     posts: [],
     post: null,
     loading: true,
-    error: {}
+    error: {},
+    qa: {}
 };
 
 export default function(state = initialState, action) {
@@ -72,7 +74,7 @@ export default function(state = initialState, action) {
                 ...state,
                 post: {
                     ...state.post,
-                    comments: state.post.comments.filter(
+                    comments: state.post.answers.filter(
                         comment => comment._id !== payload
                     )
                 },
@@ -96,6 +98,13 @@ export default function(state = initialState, action) {
                 }),
                 loading: false
             };
+        case QUESTIONS_ANSWERS:
+            return {
+                ...state,
+                qa: payload,
+                loading: false
+            };
+
         default:
             return state;
     }

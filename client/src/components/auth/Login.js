@@ -26,13 +26,13 @@ const Login = ({ login, isAuthenticated }) => {
     }
     return (
         <Fragment>
-            <div class="logBody">
-                <div class="regForm">
-                    <form class="register" onSubmit={e => onSubmit(e)}>
+            <div className="logBody">
+                <div className="regForm">
+                    <form className="register" onSubmit={e => onSubmit(e)}>
                         <h2>Login</h2>
-                        <div class="rowF">
-                            <div class="colF">
-                                <div class="inputBox">
+                        <div className="rowF">
+                            <div className="colF">
+                                <div className="inputBox">
                                     <input
                                         type="text"
                                         name="email"
@@ -40,14 +40,14 @@ const Login = ({ login, isAuthenticated }) => {
                                         required="required"
                                         onChange={e => onChange(e)}
                                     />
-                                    <span class="textF">Email</span>
-                                    <span class="lineF"></span>
+                                    <span className="textF">Email</span>
+                                    <span className="lineF"></span>
                                 </div>
                             </div>
                         </div>
-                        <div class="rowF">
-                            <div class="colF">
-                                <div class="inputBox">
+                        <div className="rowF">
+                            <div className="colF">
+                                <div className="inputBox">
                                     <input
                                         type="password"
                                         name="password"
@@ -56,14 +56,14 @@ const Login = ({ login, isAuthenticated }) => {
                                         required="required"
                                         onChange={e => onChange(e)}
                                     />
-                                    <span class="textF">Password</span>
-                                    <span class="lineF"></span>
+                                    <span className="textF">Password</span>
+                                    <span className="lineF"></span>
                                 </div>
                             </div>
                         </div>
-                        <div class="rowF">
-                            <div class="colF">
-                                <div class="btnCont">
+                        <div className="rowF">
+                            <div className="colF">
+                                <div className="btnCont">
                                     <input
                                         type="submit"
                                         name="login"
@@ -73,7 +73,7 @@ const Login = ({ login, isAuthenticated }) => {
                             </div>
                         </div>
                     </form>
-                    <div class="redirect">
+                    <div className="redirect">
                         <Link to="/register">
                             Don't have an account? Register!
                         </Link>

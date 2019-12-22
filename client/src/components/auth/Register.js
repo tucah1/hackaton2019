@@ -57,13 +57,13 @@ const Register = ({ setAlert, register, auth: { isAuthenticated } }) => {
 
     return (
         <Fragment>
-            <div class="regBody">
-                <div class="regForm">
-                    <form class="register" onSubmit={e => onSubmit(e)}>
+            <div className="regBody">
+                <div className="regForm">
+                    <form className="register" onSubmit={e => onSubmit(e)}>
                         <h2>Register</h2>
-                        <div class="rowF">
-                            <div class="colF">
-                                <div class="inputBox">
+                        <div className="rowF">
+                            <div className="colF">
+                                <div className="inputBox">
                                     <input
                                         type="text"
                                         name="name"
@@ -71,12 +71,12 @@ const Register = ({ setAlert, register, auth: { isAuthenticated } }) => {
                                         required="required"
                                         onChange={e => onChange(e)}
                                     />
-                                    <span class="textF">Name</span>
-                                    <span class="lineF"></span>
+                                    <span className="textF">Name</span>
+                                    <span className="lineF"></span>
                                 </div>
                             </div>
-                            <div class="colF">
-                                <div class="inputBox">
+                            <div className="colF">
+                                <div className="inputBox">
                                     <input
                                         type="text"
                                         name="username"
@@ -84,43 +84,43 @@ const Register = ({ setAlert, register, auth: { isAuthenticated } }) => {
                                         required="required"
                                         onChange={e => onChange(e)}
                                     />
-                                    <span class="textF">Username</span>
-                                    <span class="lineF"></span>
+                                    <span className="textF">Username</span>
+                                    <span className="lineF"></span>
                                 </div>
                             </div>
                         </div>
-                        <div class="rowF">
-                            <div class="colF">
-                                <div class="inputBox">
+                        <div className="rowF">
+                            <div className="colF">
+                                <div className="inputBox">
                                     <input
                                         type="text"
                                         name="email"
-                                        value={name}
+                                        value={email}
                                         required="required"
                                         onChange={e => onChange(e)}
                                     />
-                                    <span class="textF">Email</span>
-                                    <span class="lineF"></span>
+                                    <span className="textF">Email</span>
+                                    <span className="lineF"></span>
                                 </div>
                             </div>
-                            <div class="colF">
-                                <div class="inputBox">
+                            <div className="colF">
+                                <div className="inputBox">
                                     <input
-                                        type="text"
+                                        type="password"
                                         name="password"
                                         value={password}
                                         required="required"
                                         onChange={e => onChange(e)}
                                     />
-                                    <span class="textF">Password</span>
-                                    <span class="lineF"></span>
+                                    <span className="textF">Password</span>
+                                    <span className="lineF"></span>
                                 </div>
                             </div>
                         </div>
 
-                        <div class="rowF">
-                            <div class="colF">
-                                <div class="inputBox">
+                        <div className="rowF">
+                            <div className="colF">
+                                <div className="inputBox">
                                     <input
                                         type="text"
                                         name="university"
@@ -128,29 +128,31 @@ const Register = ({ setAlert, register, auth: { isAuthenticated } }) => {
                                         required="required"
                                         onChange={e => onChange(e)}
                                     />
-                                    <span class="textF">University</span>
-                                    <span class="lineF"></span>
+                                    <span className="textF">University</span>
+                                    <span className="lineF"></span>
                                 </div>
                             </div>
 
-                            <div class="colF">
-                                <div class="inputBox">
+                            <div className="colF">
+                                <div className="inputBox">
                                     <input
-                                        type="text"
+                                        type="password"
                                         name="password2"
                                         value={password2}
                                         required="required"
                                         onChange={e => onChange(e)}
                                     />
-                                    <span class="textF">Confirm Password</span>
-                                    <span class="lineF"></span>
+                                    <span className="textF">
+                                        Confirm Password
+                                    </span>
+                                    <span className="lineF"></span>
                                 </div>
                             </div>
                         </div>
 
-                        <div class="rowF">
-                            <div class="colF">
-                                <div class="inputBox">
+                        <div className="rowF">
+                            <div className="colF">
+                                <div className="inputBox">
                                     <input
                                         type="text"
                                         name="faculty"
@@ -158,12 +160,12 @@ const Register = ({ setAlert, register, auth: { isAuthenticated } }) => {
                                         required="required"
                                         onChange={e => onChange(e)}
                                     />
-                                    <span class="textF">Faculty</span>
-                                    <span class="lineF"></span>
+                                    <span className="textF">Faculty</span>
+                                    <span className="lineF"></span>
                                 </div>
                             </div>
-                            <div class="colF">
-                                <div class="inputBox">
+                            <div className="colF">
+                                <div className="inputBox">
                                     <input
                                         type="text"
                                         name="department"
@@ -171,14 +173,14 @@ const Register = ({ setAlert, register, auth: { isAuthenticated } }) => {
                                         required="required"
                                         onChange={e => onChange(e)}
                                     />
-                                    <span class="textF">Department</span>
-                                    <span class="lineF"></span>
+                                    <span className="textF">Department</span>
+                                    <span className="lineF"></span>
                                 </div>
                             </div>
                         </div>
-                        <div class="rowF">
-                            <div class="colF">
-                                <div class="btnCont">
+                        <div className="rowF">
+                            <div className="colF">
+                                <div className="btnCont">
                                     <input
                                         type="submit"
                                         name="register"
@@ -188,7 +190,7 @@ const Register = ({ setAlert, register, auth: { isAuthenticated } }) => {
                             </div>
                         </div>
                     </form>
-                    <div class="redirect">
+                    <div className="redirect">
                         <Link href="/login">Have and account? Log In!</Link>
                     </div>
                 </div>
