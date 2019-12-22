@@ -18,6 +18,10 @@ a{
 	text-decoration: none;
 }
 
+button:focus{
+	outline: none;
+}
+
 /*body backgrounds*/
 .regBody{
 	background: linear-gradient(90deg, rgba(128,176,230,1) 16%, rgba(18,12,92,1) 62%, rgba(79,2,96,1) 100%);
@@ -343,6 +347,8 @@ a{
 
 /*alerts*/
 .alert {
+	width: 60%;
+	margin: auto;
     padding: 0.8rem;
     margin: 1rem 0;
     opacity: 0.9;
