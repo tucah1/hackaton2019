@@ -57,10 +57,53 @@ router.post(
 	}
 )
 
+router.get('/search-qa/:id', async (req, res) => {
+	try {
+		let questions = await Question.find()
+			.sort({ date: -1 })
+			.lean()
+
+		let answers = questions.map(question => {
+			return question.answers
+				.filter(answer => {
+					if (answer.user.toString() === req.params.id) {
+						return true
+					} else {
+						return false
+					}
+				})
+				.map(a => {
+					a.qId = question._id
+					return a
+				})
+		})
+		function flatten(arr) {
+			return arr.reduce(function(flat, toFlatten) {
+				return flat.concat(
+					Array.isArray(toFlatten) ? flatten(toFlatten) : toFlatten
+				)
+			}, [])
+		}
+		answers = flatten(answers)
+
+		questions = questions.filter(question => {
+			if (question.user.toString() === req.params.id) {
+				return true
+			} else {
+				return false
+			}
+		})
+		res.json({ q: questions, a: answers })
+	} catch (err) {
+		console.log(err.message)
+		res.status(500).send('Server Error')
+	}
+})
+
 // @route       GET api/questions/search-questions/:searchText
 // @desc        Get all questions || Search questions
 // @access      Private
-router.get('/search-questions/:searchText', auth, async (req, res) => {
+router.get('/search-questions/:searchText', async (req, res) => {
 	const searchText = req.params.searchText
 	try {
 		let questions = await Question.find().sort({ date: -1 })
@@ -106,7 +149,7 @@ router.get('/search-questions/:searchText', auth, async (req, res) => {
 // @route       GET api/questions/:id
 // @desc        Get question by id
 // @access      Private
-router.get('/:id', auth, async (req, res) => {
+router.get('/:id', async (req, res) => {
 	try {
 		const question = await Question.findById(req.params.id)
 
@@ -351,7 +394,7 @@ router.put('/answers/like/:question_id/:answer_id', auth, async (req, res) => {
 		user.popularity = user.popularity + 10
 		await user.save()
 
-		res.json(question.likes)
+		res.json(answer.likes)
 	} catch (err) {
 		console.log(err.message)
 		res.status(500).send('Server Error')
